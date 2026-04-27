@@ -5,4 +5,8 @@ commit-msg:
 
 pre-commit:
   parallel: true
-  commands: {}
+  commands:
+    oxfmt:
+      glob: "*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,json,jsonc,json5,yaml,yml,toml,html,vue,css,scss,less,md,mdx,graphql,gql}"
+      run: pnpm exec oxfmt --no-error-on-unmatched-pattern {staged_files}
+      stage_fixed: true

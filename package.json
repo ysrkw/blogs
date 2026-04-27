@@ -3,16 +3,21 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@10.33.2",
   "scripts": {
-    "prepare": "lefthook install"
+    "prepare": "lefthook install",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.5.2",
     "@commitlint/config-conventional": "^20.5.0",
-    "lefthook": "^2.1.6"
+    "lefthook": "^2.1.6",
+    "oxfmt": "^0.46.0"
   },
+  "packageManager": "pnpm@10.33.2",
   "pnpm": {
-    "onlyBuiltDependencies": ["lefthook"]
+    "onlyBuiltDependencies": [
+      "lefthook"
+    ]
   }
 }
