@@ -4,6 +4,9 @@ commit-msg:
       run: pnpm exec commitlint --edit {1}
 
 pre-commit:
+  parallel: true
   commands:
     oxfmt:
       run: pnpm exec oxfmt --check
+    oxlint:
+      run: pnpm exec oxlint
