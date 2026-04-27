@@ -9,4 +9,4 @@ pre-commit:
     oxfmt:
       run: pnpm exec oxfmt --check
     oxlint:
-      run: pnpm exec oxlint
+      run: pnpm exec oxlint --deny-warnings
