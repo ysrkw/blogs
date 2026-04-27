@@ -4,9 +4,7 @@ commit-msg:
       run: pnpm exec commitlint --edit {1}
 
 pre-commit:
-  parallel: true
   commands:
     oxfmt:
-      glob: "*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,json,jsonc,json5,yaml,yml,toml,html,vue,css,scss,less,md,mdx,graphql,gql}"
-      run: pnpm exec oxfmt --no-error-on-unmatched-pattern {staged_files}
+      run: pnpm exec oxfmt
       stage_fixed: true
