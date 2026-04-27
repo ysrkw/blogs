@@ -6,5 +6,5 @@ commit-msg:
 pre-commit:
   commands:
     oxfmt:
-      run: pnpm exec oxfmt
-      stage_fixed: true
+      glob: "*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,json,jsonc,json5,yaml,yml,toml,html,vue,css,scss,less,md,mdx,graphql,gql}"
+      run: pnpm exec oxfmt --check {staged_files}
