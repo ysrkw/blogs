@@ -5,7 +5,6 @@
       "Edit",
       "Write",
       "NotebookEdit",
-      "MultiEdit",
       "Skill(update-config)",
       "Skill(blog-reflect)",
       "Bash(pnpm *)",
