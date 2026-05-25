@@ -8,11 +8,21 @@
       "Skill(update-config)",
       "Skill(blog-reflect)",
       "Bash(pnpm *)",
-      "Bash(git *)",
-      "Bash(touch .claude/.reflect-state)"
+      "Bash(git *)"
     ]
   },
   "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/blog-reflect-session-start.sh"
+          }
+        ]
+      }
+    ],
     "Stop": [
       {
         "matcher": "",

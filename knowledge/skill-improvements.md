@@ -33,8 +33,22 @@
 
 ### 2026-05-26: blog-reflect - Stop hook の `.reflect-state` 更新タイミングを前倒し
 
+- status: superseded (2026-05-26) → 下の「セッション単位フラグ方式」に置き換え
+- 当初の適用内容: SKILL.md 「進め方 / 1. セッション要約」末尾に手順 1 時点での touch 指示を追加
+- 廃止理由: 振り返り後に pre-commit oxfmt が対象 `.md` の mtime を更新するため、それでも再発火するケースが残った。Claude 側で touch するアプローチ自体を廃止し、hook を「セッション単位フラグ」に作り直した
+
+### 2026-05-26: blog-reflect - hook をセッション単位フラグ方式に作り直し
+
 - status: applied (2026-05-26)
-- 適用内容: SKILL.md 「進め方 / 1. セッション要約」末尾に手順 1 時点での touch 指示を追加、「5. 締め」に「手順 1 で更新済み」の注記を追加
+- 背景: 上の「.reflect-state 前倒し」案を適用した直後、振り返り完了 → コミット → pre-commit の oxfmt が `ideas/foo.md` を書き換え → mtime が `.reflect-state` より新しくなり Stop hook が再発火、というループが残った。ユーザー指摘「.reflect-state で毎回確認をとられるのが微妙」
+- 適用内容:
+  - `.claude/hooks/blog-reflect-session-start.sh` 新規追加。SessionStart で `.reflect-prompted` を削除し `.reflect-session` を touch
+  - `.claude/hooks/blog-reflect-trigger.sh` を書き換え。`.reflect-prompted` 有無で promptスキップ判定、対象 .md が `.reflect-session` より新しければ promptして `.reflect-prompted` を touch
+  - `.claude/settings.json` に SessionStart hook を登録、不要になった `Bash(touch .claude/.reflect-state)` 許可を削除
+  - `.claude/.gitignore` に `.reflect-prompted` `.reflect-session` を追加
+  - 旧 `.claude/.reflect-state` ファイルを削除
+  - blog-reflect SKILL.md から Claude 側の touch 指示を全削除し、「hook が自律管理する」旨を明記
+- 期待される効果: 1 セッション 1 回の prompt保証。振り返り後のコミット・oxfmt・追加編集で再発火しない
 - 背景: roi-thinking-for-engineers の ideate セッション終了時、Stop hook が振り返りを促した。AI が「今やる／後回し」を確認 → ユーザーが「今やる」と返答 → AI がヒアリング Q1 を投げる、までの間にユーザーが応答せず Stop を試みたところ、hook が同じ促しメッセージを再発火。さらに設計問題の議論中にも再発火し、合計 3 回ループした。原因は `.reflect-state` の更新が手順末尾にあるため、振り返りプロセス中の中間 Stop ですべて発火条件を満たしてしまうこと
 - 変更案: SKILL.md 「進め方 / 1. セッション要約」の末尾に以下を追加：
   - **要約と確認メッセージを出した直後に `touch .claude/.reflect-state` を実行する**。後回し選択でも今やる選択でも、hook の義務は「促しを出した」時点で果たしたとみなす。書き出し完了時に再度 touch は不要（既に更新済み）
