@@ -7,8 +7,23 @@
       "NotebookEdit",
       "MultiEdit",
       "Skill(update-config)",
+      "Skill(blog-reflect)",
       "Bash(pnpm *)",
-      "Bash(git *)"
+      "Bash(git *)",
+      "Bash(touch .claude/.reflect-state)"
+    ]
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/blog-reflect-trigger.sh"
+          }
+        ]
+      }
     ]
   }
 }

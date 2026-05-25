@@ -11,6 +11,7 @@ AI（Claude Code）の振る舞いに関する設定は [CLAUDE.md](./CLAUDE.md)
 | `ideas/`                 | `/blog-ideate` の出力。コンセプトメモ。日付なしファイル名                    |
 | `drafts/{slug}/`         | `/blog-outline`〜`/blog-draft` の作業場（outline.md, article.md）。日付なし  |
 | `articles/`              | 公開済み記事。ここでだけ `YYYY-MM-DD-{slug}.md` の形式で日付を付ける         |
+| `knowledge/`             | `/blog-reflect` の出力。書き手の癖・進め方・スキル改善案の長期メモ           |
 | `.claude/skills/blog-*/` | ワークフロー用 SKILL とその雛形（`templates/` をスキル配下にコロケーション） |
 
 ## ファイル命名規則
@@ -29,10 +30,14 @@ flowchart TD
     B -->|"drafts/{slug}/outline.md"| C["/blog-draft"]
     C -->|"drafts/{slug}/article.md"| D["/blog-polish"]
     D --> E["articles/{YYYY-MM-DD}-{slug}.md"]
+    A & B & C & D -.->|"セッション終了時"| R["/blog-reflect"]
+    R -->|"knowledge/**"| R
 ```
 
 各段階の詳細は対応する `.claude/skills/blog-*/SKILL.md` を参照。
 段階を飛ばさない。飛ばす場合はその場で確認する。
+
+`/blog-reflect` はワークフロー外の **第5段階**。セッション内で生まれた言語化の癖・進め方の気づき・既存スキルへの改善提案を `knowledge/` に蓄積する。`ideas/`, `drafts/`, `articles/` が更新されたセッションの終了時、Stop hook が自動で振り返りを促す。
 
 ## 記事 frontmatter スキーマ
 

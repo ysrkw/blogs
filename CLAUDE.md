@@ -24,6 +24,8 @@
 - ワークフローの段階（ideate → outline → draft → polish）を飛ばさない。飛ばす場合はユーザーに確認する
 - ファイル名に日付を付けるのは `/blog-polish` で `articles/` に移す瞬間のみ
 - コミットはユーザーの明示的な指示があるまで実行しない
+- ブログ作業を始める前に `knowledge/` を読んで書き手の癖・過去の判断履歴を反映する
+- セッション終了時、`ideas/`, `drafts/`, `articles/` のいずれかを更新していたら `/blog-reflect` を発動する（Stop hook が促す）
 
 ## 困ったとき
 
