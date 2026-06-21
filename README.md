@@ -39,6 +39,13 @@ flowchart TD
 
 `/blog-reflect` はワークフロー外の **第5段階**。セッション内で生まれた言語化の癖・進め方の気づき・既存スキルへの改善提案を `knowledge/` に蓄積する。`ideas/`, `drafts/`, `articles/` が更新されたセッションの終了時、Stop hook が自動で振り返りを促す。
 
+### 補助スキル: humanizer
+
+[`humanizer`](https://github.com/blader/humanizer)（ユーザー領域の `~/.claude/skills/humanizer/`）は AI 臭い文章のパターン（ダッシュの多用・機械的な太字・三点強調・アフォリズム化など。Wikipedia「Signs of AI writing」ベース）を検出するスキル。blog-draft（書く時点）と blog-polish（推敲時）から観点を借りて使う。
+
+- **全文リライト型なので丸ごとは当てない**。検出項目を 1 つずつ本人判断で反映する（一次体験・語りを削らないため）
+- セットアップ: [blader/humanizer](https://github.com/blader/humanizer) をユーザーの `~/.claude/skills/` に導入しておく（このリポジトリには含まれない）。未導入なら blog-draft / blog-polish の humanizer 参照箇所は手動チェックで代替する
+
 ## 記事 frontmatter スキーマ
 
 ```yaml
