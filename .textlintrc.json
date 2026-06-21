@@ -1,6 +1,11 @@
 {
   "rules": {
     "@textlint-ja/preset-ai-writing": true,
-    "preset-ja-technical-writing": true
+    "preset-ja-technical-writing": {
+      "ja-no-weak-phrase": false,
+      "max-kanji-continuous-len": {
+        "allow": ["適応型組織設計"]
+      }
+    }
   }
 }
