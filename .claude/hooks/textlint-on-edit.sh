@@ -3,7 +3,7 @@
 # 指摘があれば exit 2 で stderr を Claude に差し戻す（= textlint を「聞かせる」）。
 #
 # 方針: humanizer 同様、丸ごと --fix で書き換えない。指摘を 1 つずつ本人判断で反映する。
-# 対象: drafts/ articles/ の *.md のみ。それ以外は静かに終了。
+# 対象: ideas/ drafts/ articles/ の *.md のみ。それ以外は静かに終了。
 
 set -euo pipefail
 
@@ -16,7 +16,7 @@ file="$(node -e 'let s="";process.stdin.on("data",d=>s+=d);process.stdin.on("end
 if [ -z "$file" ]; then
   exit 0
 fi
-if ! printf '%s' "$file" | grep -Eq '/(drafts|articles)/.*\.md$'; then
+if ! printf '%s' "$file" | grep -Eq '/(ideas|drafts|articles)/.*\.md$'; then
   exit 0
 fi
 
