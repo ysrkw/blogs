@@ -1,0 +1,8 @@
+# textlint の対象外（直接 `textlint <file>` を叩いた場合の保険）。
+# 校正は drafts/ と articles/ のみ。メモ系は除外する。
+node_modules/
+ideas/
+knowledge/
+# ルート直下のメタ文書（IDE 拡張の誤検出対策も兼ねる）
+README.md
+CLAUDE.md

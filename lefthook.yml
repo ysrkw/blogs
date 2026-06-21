@@ -10,3 +10,6 @@ pre-commit:
       run: pnpm exec oxfmt --check
     oxlint:
       run: pnpm exec oxlint --deny-warnings
+    textlint:
+      glob: "{drafts,articles}/**/*.md"
+      run: pnpm exec textlint {staged_files}
