@@ -1,2 +1,0 @@
-# textlint の対象外。校正はすべての Markdown が対象。
-node_modules/
