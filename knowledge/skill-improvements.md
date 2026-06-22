@@ -113,3 +113,10 @@
 - 適用内容: 対象は blog-ideate/outline/draft/reflect。各 `templates/*.md` を SKILL.md 末尾「テンプレート」節のコードブロックに verbatim 同梱した。元ファイルは削除。参照箇所をパスから「末尾コードブロック」へ変更。孤児だった blog-reflect の session.md も同梱し step3 から参照
 - 注意: コードブロック内のテンプレは textlint の自動対象外（生成物の lint と blog-polish の機械チェックが安全網）。process-notes に記録済み
 - 期待される効果: テンプレ参照のファイル読み込みが1段減る。スキルが自己完結になる。テンプレ4ファイルが消える
+
+### 2026-06-23: blog-polish - 参考文献の SIST 整形を最終化ステップに追加
+
+- status: proposed
+- 背景: organization-as-software の公開で参考文献を SIST 02 スタイルへ改稿した。本人がこれを今後のデフォルトにすると決定。現状の blog-polish SKILL.md にはこの書式チェックが無い
+- 変更案: 「4. frontmatter の最終化」付近に参考文献の SIST 整形確認を追加。書式は「著者名（姓, 名）. 書名: 副題. 訳者名 訳. 出版者, 刊行年.」。漢字連続が出たら固有名詞のみ allow 登録・他は言い換え/スペース、という運用も併記
+- 期待される効果: 公開のたびに体裁をゼロから判断せずに済む。allow の線引きも明文化される
