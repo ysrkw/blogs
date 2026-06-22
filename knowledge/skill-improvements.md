@@ -98,3 +98,18 @@
 - 適用内容: blog-polish SKILL.md「2.」として `pnpm textlint` を最初に走らせ観点別チェックの材料にするステップを追加、以降を繰り下げ
 - 背景: textlint 導入に伴い、polish の冗長表現・一文の長さ・AI 臭チェックの一部を機械化。humanizer 同様、丸ごと --fix せず指摘を1つずつ本人判断で反映する旨を併記
 - 期待される効果: 推敲の手戻りを減らし、機械で拾える指摘を先に潰してから人の判断に集中できる
+
+### 2026-06-22: 校正ツール運用原則を CLAUDE.md に集約＋skill/knowledge の重複削減
+
+- status: applied (2026-06-22, commit 76e1d86)
+- 背景: humanizer + textlint をワークフローに入れた。その結果「丸ごと当てない／1つずつ本人判断／文体優先」の運用原則が README・各 SKILL・knowledge で計9箇所重複し、コンテキストを圧迫していた
+- 適用内容: 運用原則を CLAUDE.md「AI の執筆姿勢」に1行で集約（SSOT）。blog-draft/blog-polish から humanizer の §再列挙と文体衝突の段落を削除。blog-polish は textlint と重複する観点を統合し人判断項目に限定。writing-style/process-notes の重複行を圧縮（本人の言葉・判断履歴は保持）
+- 期待される効果: 毎セッション冒頭でロードされる knowledge とスキルの冗長を減らす。原則の更新を1箇所で済ませられる
+
+### 2026-06-22: 記事テンプレートを各 SKILL.md にコードブロック同梱
+
+- status: applied (2026-06-22, commit 76e1d86)
+- 背景: 本人要望「テンプレートはできることならそのままスキル側にコードブロックとして埋め込んでほしい」。スキルを自己完結にしたい
+- 適用内容: 対象は blog-ideate/outline/draft/reflect。各 `templates/*.md` を SKILL.md 末尾「テンプレート」節のコードブロックに verbatim 同梱した。元ファイルは削除。参照箇所をパスから「末尾コードブロック」へ変更。孤児だった blog-reflect の session.md も同梱し step3 から参照
+- 注意: コードブロック内のテンプレは textlint の自動対象外（生成物の lint と blog-polish の機械チェックが安全網）。process-notes に記録済み
+- 期待される効果: テンプレ参照のファイル読み込みが1段減る。スキルが自己完結になる。テンプレ4ファイルが消える

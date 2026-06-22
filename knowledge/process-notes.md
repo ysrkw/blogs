@@ -37,6 +37,7 @@
 - **テンプレの違反は生成物に伝播する**。blog-ideate のテンプレの `想定読了時間` が ja-technical-writing に引っかかり、過去の全 ideas に伝播していた（`読了時間の目安` に直して根を断った）。テンプレは各 SKILL.md 末尾のコードブロックに同梱されており textlint の自動対象外なので、新ルール導入時は手動で（または最初の生成物で）通す
 - **textlint v15 は明示ファイル渡し・glob 展開のいずれでも `.textlintignore` を適用しない**（`knowledge/_x.md` を直接渡すと lint された）。除外はツール側で担保できないので、pre-commit は lefthook の glob で先に絞っている。`.textlintignore` は IDE 拡張や生 `textlint <file>` 実行時の保険として残る
 - **lefthook の glob はトップ直下の flat ファイルを拾わない**。`{ideas,drafts,articles}/**/*.md` という設定は `ideas/{slug}.md`（ネストなし）を取りこぼす。末尾を `/**.md`（gobwas のスーパースター）に変えると flat と nested を両方カバーする（実測確認済み）
+- **引用ブロック（`>`）と箇条書き（`-`）で textlint の効きが違う**。`>` は ja-technical-writing の prose ルールが効かず、`-` にすると効く。古い記事のスタイル統一で `>`→`-` に変えると、lint されていなかった生文（助詞連続・一文長）がまとめて顕在化する。`>` を lint 逃れに使わない（生メモでも校正する方針）
 
 ## 時間・回数の実測
 
