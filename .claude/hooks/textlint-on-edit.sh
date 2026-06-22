@@ -1,22 +1,22 @@
 #!/usr/bin/env bash
-# PostToolUse hook: Claude が記事系 Markdown を編集したら textlint をかけ、
+# PostToolUse hook: Claude が Markdown を編集したら textlint をかけ、
 # 指摘があれば exit 2 で stderr を Claude に差し戻す（= textlint を「聞かせる」）。
 #
 # 方針: humanizer 同様、丸ごと --fix で書き換えない。指摘を 1 つずつ本人判断で反映する。
-# 対象: ideas/ drafts/ articles/ の *.md のみ。それ以外は静かに終了。
+# 対象: リポジトリ内の *.md。それ以外は静かに終了（node_modules は .textlintignore 側で除外）。
 
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 
-# stdin の JSON payload から tool_input.file_path を取得（jq 非依存・Node でパース）
-file="$(node -e 'let s="";process.stdin.on("data",d=>s+=d);process.stdin.on("end",()=>{try{process.stdout.write(JSON.parse(s)?.tool_input?.file_path||"")}catch{}})')"
+# stdin の JSON payload から tool_input.file_path を取得（jq でパース）
+file="$(jq -r '.tool_input.file_path // empty')"
 
-# file_path が取れない / 対象ディレクトリの .md でなければ何もしない
+# file_path が取れない / .md でなければ何もしない
 if [ -z "$file" ]; then
   exit 0
 fi
-if ! printf '%s' "$file" | grep -Eq '/(ideas|drafts|articles)/.*\.md$'; then
+if ! printf '%s' "$file" | grep -Eq '\.md$'; then
   exit 0
 fi
 

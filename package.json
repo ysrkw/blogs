@@ -9,8 +9,8 @@
     "fmt:check": "oxfmt --check",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
-    "textlint": "textlint \"ideas/**/*.md\" \"drafts/**/*.md\" \"articles/**/*.md\"",
-    "textlint:fix": "textlint --fix \"ideas/**/*.md\" \"drafts/**/*.md\" \"articles/**/*.md\""
+    "textlint": "textlint \"**/*.md\"",
+    "textlint:fix": "textlint --fix \"**/*.md\""
   },
   "devDependencies": {
     "@commitlint/cli": "^20.5.2",

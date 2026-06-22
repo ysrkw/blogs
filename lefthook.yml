@@ -11,5 +11,5 @@ pre-commit:
     oxlint:
       run: pnpm exec oxlint --deny-warnings
     textlint:
-      glob: "{ideas,drafts,articles}/**.md"
+      glob: "**/*.md"
       run: pnpm exec textlint {staged_files}

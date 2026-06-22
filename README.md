@@ -41,21 +41,25 @@ flowchart TD
 
 ### 補助スキル: humanizer
 
-[`humanizer`](https://github.com/blader/humanizer)（ユーザー領域の `~/.claude/skills/humanizer/`）は AI 臭い文章のパターン（ダッシュの多用・機械的な太字・三点強調・アフォリズム化など。Wikipedia「Signs of AI writing」ベース）を検出するスキル。blog-draft（書く時点）と blog-polish（推敲時）から観点を借りて使う。
+AI 臭い文章のパターンを検出するスキルとして [`humanizer`](https://github.com/blader/humanizer) を使う。置き場所はユーザー領域の `~/.claude/skills/humanizer/`。検出するのはダッシュの多用・機械的な太字・三点強調・アフォリズム化など（Wikipedia「Signs of AI writing」ベース）。blog-draft（書く時点）と blog-polish（推敲時）から観点を借りて使う。
 
 - **全文リライト型なので丸ごとは当てない**。検出項目を 1 つずつ本人判断で反映する（一次体験・語りを削らないため）
 - セットアップ: [blader/humanizer](https://github.com/blader/humanizer) をユーザーの `~/.claude/skills/` に導入しておく（このリポジトリには含まれない）。未導入なら blog-draft / blog-polish の humanizer 参照箇所は手動チェックで代替する
 
 ### 校正: textlint
 
-文章校正は [textlint](https://github.com/textlint/textlint) で機械チェックする。プリセットは [`@textlint-ja/textlint-rule-preset-ai-writing`](https://github.com/textlint-ja/textlint-rule-preset-ai-writing)（AI 臭の検出）と [`textlint-rule-preset-ja-technical-writing`](https://github.com/textlint-ja/textlint-rule-preset-ja-technical-writing)（日本語技術文の作法）。設定は `.textlintrc.json`、対象は `ideas/` `drafts/` `articles/`（長期メモの `knowledge/` とルート直下のメタ文書は `.textlintignore` で除外）。ルールはほぼ厳格運用で、カジュアルな文体と両立しない `ja-no-weak-phrase`（「思います」等）のみ off にしている。
+文章校正は [textlint][textlint] で機械チェックする。プリセットは 2 つ。AI 臭を検出する [ai-writing プリセット][preset-ai] と、日本語の技術文の作法をみる [ja-technical-writing プリセット][preset-ja] を使う。設定は `.textlintrc.json`。対象は `node_modules/` を除く全 Markdown（除外は `.textlintignore` で管理）。ルールはほぼ厳格運用。カジュアルな文体と両立しない `ja-no-weak-phrase`（「思います」等）だけ off にし、疑問符 `？` は許可している。
 
-3 つの経路で効く:
+次の経路で効く。
 
 - `pnpm textlint` / `pnpm textlint:fix`: 手動実行
-- pre-commit hook（lefthook）: ステージした `ideas/` `drafts/` `articles/` の `*.md` を検査
-- Claude Code hook（PostToolUse）: Claude が `ideas/` `drafts/` `articles/` の `*.md` を編集すると textlint が走り、指摘を Claude に差し戻す（`.claude/hooks/textlint-on-edit.sh`）
+- pre-commit hook（lefthook）: ステージした `*.md` を検査
+- Claude Code hook（PostToolUse）: Claude が `*.md` を編集すると textlint が走る。指摘は Claude に差し戻す（`.claude/hooks/textlint-on-edit.sh`）
 - `/blog-polish`: 推敲の最初に `pnpm textlint` をかけ、観点別チェックの材料にする
+
+[textlint]: https://github.com/textlint/textlint
+[preset-ai]: https://github.com/textlint-ja/textlint-rule-preset-ai-writing
+[preset-ja]: https://github.com/textlint-ja/textlint-rule-preset-ja-technical-writing
 
 humanizer 同様、**丸ごと `--fix` を当てて書き換えない**。指摘を 1 つずつ本人判断で反映し、文体・語りを守るため当てない指摘も選んでよい。
 
@@ -77,4 +81,4 @@ summary: # 1〜2 行の要約
 
 - Conventional Commits（`commitlint` で検証）
 - 記事追加・更新は `docs:` プレフィックス（例: `docs: add article "..."`）
-- pre-commit hook（lefthook）で `oxfmt --check`・`oxlint`・`textlint`（`ideas/` `drafts/` `articles/` の `*.md`）が走る
+- pre-commit hook（lefthook）で `oxfmt --check`・`oxlint`・`textlint`（ステージした全 `*.md`）が走る
