@@ -1,2 +1,7 @@
 node_modules/
 .DS_Store
+
+# blog-reflect の状態フラグ（hook が管理）
+.claude/.reflect-state
+.claude/.reflect-prompted
+.claude/.reflect-session
