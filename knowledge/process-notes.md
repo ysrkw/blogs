@@ -30,6 +30,14 @@
 - **humanizer は検出ツールとして使い、適用は 1 項目ずつ本人判断**。ダッシュ（§14）は全削除したが、宣伝臭・三点強調・アフォリズム等の一括書き換えは「一次体験・語りが削れる」ため不適用とした。humanizer は全文リライト型なので、丸ごと当てず観点だけ借りる（2026-06-21）
 - **「後で校正し直したい」ときは `articles/` へ移さず draft 据え置き**。`status: published` は「完成・公開可」の意味づけマーカーで、実際に外へ出るのは push のみ。再校正の余地を残すなら draft のままコミットで成果を保全する（2026-06-21）
 
+## 機械校正（textlint）の運用知見（2026-06-22 導入）
+
+- **丸ごと `--fix` を当てない**。humanizer と同じ温度感で、指摘は1つずつ本人判断で反映。文体・一次体験・語りを守るため、あえて直さない指摘を選んでよい
+- textlint は4経路で効く: `pnpm textlint` / lefthook pre-commit / Claude Code PostToolUse hook（編集すると指摘を Claude に差し戻す）/ blog-polish 冒頭の機械チェック
+- **テンプレの違反は生成物に伝播する**。blog-ideate のテンプレ `concept.md` にあった `想定読了時間` が ja-technical-writing に引っかかり、過去の全 ideas に伝播していた → テンプレ側を `読了時間の目安` に直して根を断った。新ルール導入時はテンプレも必ず通す
+- **textlint v15 は明示ファイル渡し・glob 展開のいずれでも `.textlintignore` を適用しない**（`knowledge/_x.md` を直接渡すと lint された）。除外はツール側で担保できないので、pre-commit は lefthook の glob で先に絞る設計にしている。`.textlintignore` は IDE 拡張や生 `textlint <file>` 実行時の保険にとどまる
+- **lefthook の glob はトップ直下の flat ファイルを拾わない**。`{ideas,drafts,articles}/**/*.md` という設定は `ideas/{slug}.md`（ネストなし）を取りこぼす。末尾を `/**.md`（gobwas のスーパースター）に変えると flat と nested を両方カバーする（実測確認済み）
+
 ## 時間・回数の実測
 
 <!-- 「この記事は ideate→polish まで N セッション、合計約 X 時間」など、計測できた範囲で -->
