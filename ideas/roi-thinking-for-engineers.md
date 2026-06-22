@@ -35,7 +35,7 @@ summary: コーディングエージェント時代、エンジニアは費用�
 ## 独自の角度・切り口
 
 エンジニア視点で、コーディングエージェントを使ってエンジニアリングを組織全体に広げるという課題に実際に取り組んでいる立場から書くこと。
-前作 [[critical-thinking-with-coding-agents]] の「PdM が担ってきた領域がエンジニアに拡張される」流れの続編として読める。
+前作 [critical-thinking-with-coding-agents](./critical-thinking-with-coding-agents.md) の「PdM が担ってきた領域がエンジニアに拡張される」流れの続編として読める。
 
 ## 読了時間の目安
 
@@ -71,4 +71,4 @@ summary: コーディングエージェント時代、エンジニアは費用�
 
 - エンジニア視点で書かれていること
 - コーディングエージェントによってエンジニアリングを組織全体へ広げる課題に取り組んでいるという立場
-- [[critical-thinking-with-coding-agents]] のシリーズ的続編として読める
+- [critical-thinking-with-coding-agents](./critical-thinking-with-coding-agents.md) のシリーズ的続編として読める
