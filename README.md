@@ -12,7 +12,7 @@ AI（Claude Code）の振る舞いに関する設定は [CLAUDE.md](./CLAUDE.md)
 | `drafts/{slug}/`         | `/blog-outline`〜`/blog-draft` の作業場（outline.md, article.md）。日付なし  |
 | `articles/`              | 公開済み記事。ここでだけ `YYYY-MM-DD-{slug}.md` の形式で日付を付ける         |
 | `knowledge/`             | `/blog-reflect` の出力。書き手の癖・進め方・スキル改善案の長期メモ           |
-| `.claude/skills/blog-*/` | ワークフロー用 SKILL とその雛形（`templates/` をスキル配下にコロケーション） |
+| `.claude/skills/blog-*/` | ワークフロー用 SKILL。各記事の雛形は SKILL.md 末尾にコードブロックとして同梱 |
 
 ## ファイル命名規則
 

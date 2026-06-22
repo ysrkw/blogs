@@ -53,9 +53,9 @@ description: セッションを振り返り、書き手の癖・進め方・ス�
 
 以下のファイルに追記する。**既存項目との重複を作らない**：既に近い記述があれば追記でなく更新する。
 
-- `knowledge/writing-style.md` — 文体・好む／避ける言い回し・本人の言葉
-- `knowledge/process-notes.md` — 進め方の気づき・詰まったパターン
-- `knowledge/sessions/{YYYY-MM-DD}-{slug}.md` — そのセッション固有の生メモ（後で見返す用、整形しすぎない）
+- `knowledge/writing-style.md`: 文体・好む／避ける言い回し・本人の言葉
+- `knowledge/process-notes.md`: 進め方の気づき・詰まったパターン
+- `knowledge/sessions/{YYYY-MM-DD}-{slug}.md`: そのセッション固有の生メモ（本スキル末尾「テンプレート」をベースに。後で見返す用、整形しすぎない）
 
 書き換え案を**全文 diff として提示**し、ユーザー確認を取ってから Write/Edit する。
 
@@ -93,6 +93,40 @@ description: セッションを振り返り、書き手の癖・進め方・ス�
 
 - 追記: `knowledge/writing-style.md`, `knowledge/process-notes.md`, `knowledge/skill-improvements.md`
 - 新規: `knowledge/sessions/{YYYY-MM-DD}-{slug}.md`（slug が無ければ `{YYYY-MM-DD}-session.md`）
+
+## テンプレート
+
+`knowledge/sessions/{YYYY-MM-DD}-{slug}.md` の雛形。これをベースに埋める。
+
+```markdown
+---
+date: YYYY-MM-DD
+slug: # 関連スラグ（なければ session）
+stage: # ideate | outline | draft | polish | mixed
+---
+
+# {YYYY-MM-DD} {slug}
+
+## このセッションでやったこと
+
+<!-- 3〜5 行。ユーザーが後で見返した時に「ああ、あの回か」と分かるレベル -->
+
+## 言い換えた／書き直した表現
+
+<!-- before → after 形式。なぜ書き直したかも 1 行 -->
+
+## 詰まったポイント
+
+<!-- どの段階で、何に時間を使ったか -->
+
+## 本人の言葉メモ
+
+<!-- 引用ブロックで。AI が言い換えない -->
+
+## 次回への申し送り
+
+<!-- 1〜3 行。同じ段階を次にやる時の自分へ -->
+```
 
 ## 次のステップ
 
