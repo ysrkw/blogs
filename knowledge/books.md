@@ -20,3 +20,4 @@
 - [チームトポロジー](books/team-topologies.md) — 認知負荷を軸にしたチーム設計。登場: organization-as-software（核）
 - [EMPOWERED](books/empowered.md) — 権限を持つプロダクトチーム。登場: organization-as-software（参考文献）
 - [エンジニアリングマネジャー入門](books/engineering-management-for-the-rest-of-us.md) — エンジニア出身者向けの EM 入門。登場: organization-as-software（参考文献）
+- [ビジョナリー・カンパニー2](books/good-to-great.md) — good から great への飛躍の法則。第 5 水準のリーダーは目的と意思決定を備えた普通の人。使いどころメモあり・記事未使用
