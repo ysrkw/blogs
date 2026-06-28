@@ -5,6 +5,7 @@
       "Edit",
       "Write",
       "NotebookEdit",
+      "WebFetch",
       "Skill(update-config)",
       "Skill(blog-reflect)",
       "Bash(pnpm *)",
