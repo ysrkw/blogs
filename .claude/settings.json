@@ -8,7 +8,7 @@
       "WebFetch",
       "Skill(update-config)",
       "Skill(blog-reflect)",
-      "Bash(pnpm *)",
+      "Bash(pnpm run *)",
       "Bash(git *)"
     ]
   },
