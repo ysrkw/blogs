@@ -46,6 +46,13 @@ AI 臭い文章のパターンを検出するスキルとして [`humanizer`](ht
 - **全文リライト型なので丸ごとは当てない**。検出項目を 1 つずつ本人判断で反映する（一次体験・語りを削らないため）
 - セットアップ: [blader/humanizer](https://github.com/blader/humanizer) をユーザーの `~/.claude/skills/` に導入しておく（このリポジトリには含まれない）。未導入なら blog-draft / blog-polish の humanizer 参照箇所は手動チェックで代替する
 
+### 補助スキル: book-log
+
+読んだ本を記録するスキル。「本を読んだ」と報告したら発動する。書誌（原題・訳者・出版社・刊行年・ISBN）を一次情報から取得する。概要を下書きし、使いどころは本人にヒアリングする。そのうえで `knowledge/books/{slug}.md` を作り、索引 `knowledge/books.md` に1行追加する。ワークフローの外で、記事の参考文献や根拠を再利用しやすくするのが目的。
+
+- 1冊につき1ファイル。索引は `knowledge/books.md` がリンク一覧と運用ルールを持つ
+- 書誌は AI の記憶で埋めず、出版社ページや CiNii など一次情報で裏取りする
+
 ### 校正: textlint
 
 文章校正は [textlint][textlint] で機械チェックする。プリセットは 2 つ。AI 臭を検出する [ai-writing プリセット][preset-ai] と、日本語の技術文の作法をみる [ja-technical-writing プリセット][preset-ja] を使う。設定は `.textlintrc.json`。対象は `node_modules/` を除く全 Markdown（除外は `.textlintignore` で管理）。ルールはほぼ厳格運用。カジュアルな文体と両立しない `ja-no-weak-phrase`（「思います」等）だけ off にし、疑問符 `？` は許可している。
