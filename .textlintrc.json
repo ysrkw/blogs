@@ -8,7 +8,7 @@
         "allowHalfWidthQuestion": true
       },
       "max-kanji-continuous-len": {
-        "allow": ["適応型組織設計", "日本能率協会"]
+        "allow": ["適応型組織設計", "日本能率協会", "知識創造企業", "東洋経済新報社"]
       }
     }
   }
