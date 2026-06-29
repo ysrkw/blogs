@@ -5,10 +5,17 @@
       "ja-no-weak-phrase": false,
       "no-exclamation-question-mark": {
         "allowFullWidthQuestion": true,
-        "allowHalfWidthQuestion": true
+        "allowHalfWidthQuestion": true,
+        "allow": ["ドメイン駆動設計入門 ボトムアップでわかる！ドメイン駆動設計の基本"]
       },
       "max-kanji-continuous-len": {
-        "allow": ["適応型組織設計", "日本能率協会", "知識創造企業", "東洋経済新報社"]
+        "allow": [
+          "適応型組織設計",
+          "日本能率協会",
+          "知識創造企業",
+          "東洋経済新報社",
+          "駆動設計入門"
+        ]
       }
     }
   }
