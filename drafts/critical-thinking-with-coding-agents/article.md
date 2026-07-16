@@ -1,5 +1,5 @@
 ---
-title: エージェントは「動くもの」を作る。「良いもの」は誰が作るのか
+title: 批判的思考でエージェントの成果物に向き合う
 slug: critical-thinking-with-coding-agents
 status: draft
 created: 2026-06-23
