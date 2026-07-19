@@ -4,6 +4,8 @@ date: 2026-05-26
 phase: outline
 ---
 
+# 2026-05-26 organization-as-software
+
 ## このセッションで起きたこと（時系列・整形しすぎない）
 
 - /blog-outline organization-as-software 起動
