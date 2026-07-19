@@ -30,5 +30,6 @@ created: YYYY-MM-DD # ideate 時に確定
 updated: YYYY-MM-DD # 更新の都度
 tags: []
 summary: # 1〜2 行の要約
+published_url: # Qiita の公開 URL。公開後に記録（release.md 参照）
 ---
 ```
