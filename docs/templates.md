@@ -22,3 +22,4 @@ published_url: # Qiita の公開 URL。公開後に記録
 - `status` は段階に応じて `idea → outline → draft → published` と進む
 - `tags` / `summary` は outline 段階では省略してよい。draft 以降で埋める
 - `published_url` は publish 後にのみ付く（手順は [release.md](./release.md)）
+- 本文は frontmatter 直後に `# {title}`（`title` と同じ文言の H1）を置いてから書き始める。H1 の下に 1 行空けてリード文を続ける
