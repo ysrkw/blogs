@@ -6,10 +6,12 @@
       "Write",
       "NotebookEdit",
       "WebFetch",
+      "WebSearch",
       "Skill(update-config)",
       "Skill(blog-reflect)",
+      "Bash(git *)",
       "Bash(pnpm run *)",
-      "Bash(git *)"
+      "Bash(pnpm exec *)"
     ]
   },
   "hooks": {
