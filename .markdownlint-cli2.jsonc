@@ -1,6 +1,6 @@
 {
   // Markdown 構文の lint（日本語文章は textlint 側が担当）。
-  // ルールの調整理由は docs/markdown-style.md を参照。
+  // ルールの調整理由は docs/markdown.md を参照。
   "config": {
     "default": true,
     // 行長制限。日本語の長い段落があるため無効化。

@@ -17,7 +17,7 @@ AI と人間が共有する執筆のルール。AI（Claude Code）はこのル�
 - 断定する文には根拠を添える（測定値、参照リンク、自分の試行回数など）
 - 専門用語は初出で 1 行補足
 - 一次体験・具体例を冗長表現の削減と混同して削らない
-- 校正ツール（humanizer / textlint）は丸ごと当てない。指摘を 1 つずつ本人判断で反映し、文体（です・ます一貫）デフォルトはツールの常体化リライトより常に優先する。ツールの仕組みは [skills.md](./skills.md) と [markdown-proofreading.md](./markdown-proofreading.md) を参照
+- 校正ツール（humanizer / textlint）は丸ごと当てない。指摘を 1 つずつ本人判断で反映し、文体（です・ます一貫）デフォルトはツールの常体化リライトより常に優先する。ツールの仕組みは [skills.md](./skills.md) と [markdown.md](./markdown.md) を参照
 
 ## 運用ルール
 
