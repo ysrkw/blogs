@@ -1,3 +1,9 @@
+---
+date: 2026-06-22
+slug: textlint-setup
+stage: mixed
+---
+
 # 2026-06-22 textlint 導入セッション
 
 執筆ではなくツール導入の回。ideas/ drafts/ の textlint 指摘修正で記事系ファイルに触れたため reflect 対象とした。

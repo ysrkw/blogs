@@ -1,3 +1,9 @@
+---
+date: 2026-05-26
+slug: roi-thinking-for-engineers
+stage: ideate
+---
+
 # 2026-05-26 roi-thinking-for-engineers セッション
 
 ## 何をしたか

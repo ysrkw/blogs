@@ -1,3 +1,9 @@
+---
+date: 2026-06-21
+slug: organization-as-software
+stage: draft
+---
+
 # 2026-06-21 organization-as-software（draft セッション生メモ）
 
 整形しすぎず、後で見返す用の生メモ。

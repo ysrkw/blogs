@@ -1,3 +1,9 @@
+---
+date: 2026-05-26
+slug: critical-thinking-with-coding-agents
+stage: mixed
+---
+
 # 2026-05-26 critical-thinking-with-coding-agents
 
 ## 進めた段階

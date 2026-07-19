@@ -1,7 +1,7 @@
 ---
-slug: organization-as-software
 date: 2026-05-26
-phase: outline
+slug: organization-as-software
+stage: outline
 ---
 
 # 2026-05-26 organization-as-software

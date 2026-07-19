@@ -1,7 +1,7 @@
 ---
 date: 2026-05-26
 slug: blog-reflect-bootstrap
-stage: meta
+stage: mixed
 ---
 
 # 2026-05-26 blog-reflect-bootstrap
