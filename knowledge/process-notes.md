@@ -46,7 +46,7 @@ critical-thinking-with-coding-agents で見出し「論理的思考は線路を�
 
 ## 機械校正（textlint）の運用知見（2026-06-22 導入）
 
-運用原則は CLAUDE.md「AI の執筆姿勢」、効かせる経路と設定は README を参照。ここでは導入時に得た固有の学びだけ残す。
+運用原則は CLAUDE.md「AI の執筆姿勢」、効かせる経路と設定は docs/proofreading.md を参照。ここでは導入時に得た固有の学びだけ残す。
 
 - **テンプレの違反は生成物に伝播する**。blog-ideate のテンプレの `想定読了時間` が ja-technical-writing に引っかかり、過去の全 ideas に伝播していた（`読了時間の目安` に直して根を断った）。テンプレは各 SKILL.md 末尾のコードブロックに同梱されており textlint の自動対象外なので、新ルール導入時は手動で（または最初の生成物で）通す
 - **textlint v15 は明示ファイル渡し・glob 展開のいずれでも `.textlintignore` を適用しない**（`knowledge/_x.md` を直接渡すと lint された）。除外はツール側で担保できないので、pre-commit は lefthook の glob で先に絞っている。`.textlintignore` は IDE 拡張や生 `textlint <file>` 実行時の保険として残る

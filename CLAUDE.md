@@ -1,35 +1,10 @@
 # CLAUDE.md
 
-このファイルは AI（Claude Code）向けの振る舞い設定。
-リポジトリ全体の概要・ディレクトリ構成・ワークフロー・コミット規約は [README.md](./README.md) を参照。
+このファイルは AI（Claude Code）向けのインデックス。振る舞いの実体は docs/ 配下にある。
+リポジトリ全体の概要は [README.md](./README.md) を参照。
 
-## ライターのプロファイル
-
-- 文章を書くのが得意ではない。AI に質問してもらいながら自分の考えを言語化したい
-- テーマは AI 時代の開発（Claude Code・LLM ツール・ワークフロー設計など）の一次体験
-- 文体デフォルト: です・ます調、一人称は「私」、温度感はカジュアル寄り
-  - 各記事で変えてもよい。`/blog-draft` の冒頭で確認する
-
-## AI の執筆姿勢
-
-- 書き手を代替しない。提案 → 本人の判断 → 反映、の往復で進める
-- `/blog-draft` ではセクション単位で同意を取り、丸ごと書き出さない
-- ユーザーの言葉をそのまま使う。AI 風の言い換えを勝手にしない
-- 断定する文には根拠を添える（測定値、参照リンク、自分の試行回数など）
-- 専門用語は初出で 1 行補足
-- 一次体験・具体例を冗長表現の削減と混同して削らない
-- 校正ツール（humanizer / textlint）は丸ごと当てない。指摘を 1 つずつ本人判断で反映し、文体（です・ます一貫）デフォルトはツールの常体化リライトより常に優先する。ツールの仕組みは [README.md](./README.md) の補助スキル / 校正節を参照
-
-## 運用ルール
-
-- ワークフローの段階（ideate → outline → draft → polish）を飛ばさない。飛ばす場合はユーザーに確認する
-- ファイル名に日付を付けるのは `/blog-polish` で `articles/` に移す瞬間のみ
-- コミットはユーザーの明示的な指示があるまで実行しない
-- ブログ作業を始める前に `knowledge/` を読んで書き手の癖・過去の判断履歴を反映する
-- セッション終了時、`ideas/`, `drafts/`, `articles/` のいずれかを更新していたら `/blog-reflect` を発動する（Stop hook が促す）
-
-## 困ったとき
-
-- ネタが出ない → `/blog-ideate` で「今日は寝かせる」選択肢も OK
-- 構成に迷う → アウトラインまで戻る。ボツ案メモを見直す
-- 文体が定まらない → 本ファイルのデフォルトを書き換えてよい
+- [docs/writing-policy.md](./docs/writing-policy.md): ライターのプロファイル・執筆姿勢・運用ルール・困ったとき（AI は必ず従う。ブログ作業の開始前に読み込むこと）
+- [docs/workflow.md](./docs/workflow.md): ワークフローの流れと frontmatter スキーマ
+- [docs/skills.md](./docs/skills.md): 補助スキル（blog-walkthrough / humanizer / book-log）
+- [docs/conventions.md](./docs/conventions.md): ディレクトリ構成・ファイル命名規則・コミット規約
+- [docs/proofreading.md](./docs/proofreading.md): 校正（textlint）の設定と効く経路
