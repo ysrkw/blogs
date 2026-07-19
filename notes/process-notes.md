@@ -72,4 +72,4 @@ critical-thinking-with-coding-agents の draft で、出典を選ぶ場面が3�
 ## ワークフロー設計の方針（meta）
 
 - スキル自己改善は提案をログ化するだけで、AI は SKILL.md を直接書き換えない（適用は本人判断）
-- 書き手代替を避ける温度感・命名規則など docs に集約済みの方針は docs/writing-policy.md と docs/directory-structure.md を参照
+- 書き手代替を避ける温度感・命名規則など docs に集約済みの方針は docs/writing-policy.md と docs/structure.md を参照

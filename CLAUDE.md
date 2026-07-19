@@ -8,12 +8,13 @@
 
 - [docs/books.md](./docs/books.md): 読書記録の索引と運用ルール（本体は `books/` 配下）
 - [docs/commits.md](./docs/commits.md): コミット規約（Conventional Commits・pre-commit hook）
-- [docs/directory-structure.md](./docs/directory-structure.md): ディレクトリ構成と命名規則
+- [docs/diagrams.md](./docs/diagrams.md): 記事に入れる図（Mermaid）の作り方
 - [docs/markdown-style.md](./docs/markdown-style.md): Markdown の書き方
 - [docs/notes.md](./docs/notes.md): 振り返りの長期メモの索引と更新ルール（本体は `notes/` 配下）
 - [docs/proofreading.md](./docs/proofreading.md): 校正（textlint）の設定と効く経路
 - [docs/release.md](./docs/release.md): Qiita への手動公開の手順
 - [docs/skills.md](./docs/skills.md): ローカルスキル（blog-\* / book-log）の索引と外部 humanizer
+- [docs/structure.md](./docs/structure.md): リポジトリの構成（ディレクトリ構造・命名規則）
 - [docs/templates.md](./docs/templates.md): 記事テンプレート集。記事 frontmatter スキーマの正規（スキルの雛形はここを参照）
 - [docs/workflow.md](./docs/workflow.md): ワークフローの流れ
 - [docs/writing-policy.md](./docs/writing-policy.md): ライターのプロファイル・執筆姿勢・運用ルール・困ったとき（AI は必ず従う。ブログ作業の開始前に読み込むこと）
