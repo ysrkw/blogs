@@ -20,7 +20,7 @@ critical-thinking-with-coding-agents で見出し「論理的思考は線路を�
 - **本文の文脈と関係ない図は作らない**（本人申し送り）。図がバイブコーディング対比まで膨らみ、「見出しの説明をしたいだけだった」と原点に戻した。図が本文から独立し始めたら、図を直すのではなく別セクションを増やすなど構成自体を見直す
 - **図に起こすと説明の抜けが見える**。図化の途中で「レビューには論理と批判の2つの層がある」という本文の不足に気づき、段落を追加した。本人言「アイディアは広げるべきなので使える時は使う」
 - **図のラベルの語彙は、比喩側か現実側かを最初に決める**。比喩の語（直進・徒歩）と開発の語（レビュー・実装）の間で 10 往復ほど揺れた。着地は「図は現実の開発の語、比喩は本文が担う」
-- **消化済み todo は振り返り時に knowledge へ吸収して todo.md から削除する**（2026-07-19 本人指示）。判断の経緯は git 履歴に残る
+- **消化済み todo は振り返り時に notes へ吸収して todo.md から削除する**（2026-07-19 本人指示）。判断の経緯は git 履歴に残る
   - 指示の原文「todo.md はある程度終わったので消せるようにしておいて欲しい」
 
 ## 観察された傾向
@@ -49,7 +49,7 @@ critical-thinking-with-coding-agents で見出し「論理的思考は線路を�
 運用原則は CLAUDE.md「AI の執筆姿勢」、効かせる経路と設定は docs/proofreading.md を参照。ここでは導入時に得た固有の学びだけ残す。
 
 - **テンプレの違反は生成物に伝播する**。blog-ideate のテンプレの `想定読了時間` が ja-technical-writing に引っかかり、過去の全 ideas に伝播していた（`読了時間の目安` に直して根を断った）。テンプレは各 SKILL.md 末尾のコードブロックに同梱されており textlint の自動対象外なので、新ルール導入時は手動で（または最初の生成物で）通す
-- **textlint v15 は明示ファイル渡し・glob 展開のいずれでも `.textlintignore` を適用しない**（`knowledge/_x.md` を直接渡すと lint された）。除外はツール側で担保できないので、pre-commit は lefthook の glob で先に絞っている。`.textlintignore` は IDE 拡張や生 `textlint <file>` 実行時の保険として残る
+- **textlint v15 は明示ファイル渡し・glob 展開のいずれでも `.textlintignore` を適用しない**（`notes/_x.md` を直接渡すと lint された）。除外はツール側で担保できないので、pre-commit は lefthook の glob で先に絞っている。`.textlintignore` は IDE 拡張や生 `textlint <file>` 実行時の保険として残る
 - **lefthook の glob はトップ直下の flat ファイルを拾わない**。`{ideas,drafts,articles}/**/*.md` という設定は `ideas/{slug}.md`（ネストなし）を取りこぼす。末尾を `/**.md`（gobwas のスーパースター）に変えると flat と nested を両方カバーする（実測確認済み）
 - **引用ブロック（`>`）と箇条書き（`-`）で textlint の効きが違う**。`>` は ja-technical-writing の prose ルールが効かず、`-` にすると効く。古い記事のスタイル統一で `>`→`-` に変えると、lint されていなかった生文（助詞連続・一文長）がまとめて顕在化する。`>` を lint 逃れに使わない（生メモでも校正する方針）
 - **pre-commit の oxfmt は gitignored ファイルも検査する**。lefthook の `oxfmt --check` は staged 限定でなく全ファイルを対象にする。そのため gitignore 済みの `.claude/settings.local.json` の整形崩れでもコミットが止まる。中身を変えず `pnpm exec oxfmt <file>` で整形だけ直せば、他チェックを通したまま正規にコミットできる。--no-verify で全チェックを飛ばさない（2026-06-23）
@@ -71,6 +71,5 @@ critical-thinking-with-coding-agents の draft で、出典を選ぶ場面が3�
 
 ## ワークフロー設計の方針（meta）
 
-- 各段階は**書き手代替を避ける**温度感で統一されている（質問→本人判断→反映の往復）
-- スキル自己改善も同じ温度感。AI は提案をログ化するだけで SKILL.md は直接書き換えない
-- ファイル名に日付を付けるのは `articles/` と `knowledge/sessions/` のみ。途中段階は日付なし
+- スキル自己改善は提案をログ化するだけで、AI は SKILL.md を直接書き換えない（適用は本人判断）
+- 書き手代替を避ける温度感・命名規則など docs に集約済みの方針は docs/writing-policy.md と docs/directory-structure.md を参照

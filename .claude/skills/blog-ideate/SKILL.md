@@ -61,7 +61,7 @@ description: ブログ記事のコンセプトを対話で発掘する。質問�
 
 ## テンプレート
 
-`ideas/{slug}.md` の雛形。これをベースに埋める。
+`ideas/{slug}.md` の雛形。これをベースに埋める。frontmatter のフィールド定義は docs/templates.md を正規とする。
 
 ```markdown
 ---

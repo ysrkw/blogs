@@ -54,7 +54,7 @@ description: コンセプトメモから記事の構成（タイトル候補・�
 
 ## テンプレート
 
-`drafts/{slug}/outline.md` の雛形。これをベースに埋める。
+`drafts/{slug}/outline.md` の雛形。これをベースに埋める。frontmatter のフィールド定義は docs/templates.md を正規とする。
 
 ```markdown
 ---

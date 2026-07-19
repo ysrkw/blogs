@@ -20,7 +20,7 @@ description: 記事全体を上からゆっくり通し読みして見直す。1
 
 - 引数: `{slug}`
 - 読み込み: `drafts/{slug}/article.md`（articles/ へ移動済みなら該当ファイル）
-- 事前に `knowledge/writing-style.md` と `drafts/{slug}/todo.md` を読む（リズムの基準・通し読みで確認したい項目の引き継ぎ）
+- 事前に `docs/writing-style.md` と `drafts/{slug}/todo.md` を読む（リズムの基準・通し読みで確認したい項目の引き継ぎ）
 
 ## 進め方
 
@@ -54,7 +54,7 @@ description: 記事全体を上からゆっくり通し読みして見直す。1
 - 丸ごとリライトしない。修正は本人の合意を取ってから 1 箇所ずつ
 - ユーザーの言葉をそのまま使う。AI 風の言い換えを勝手にしない
 - リズム（意図的な言い切り）を「揺れ」として揃えようとしない。平坦なブロックには抑揚の提案をしてよい
-- 修正の反映時は textlint の指摘に従う（運用は CLAUDE.md「AI の執筆姿勢」参照）
+- 修正の反映時は textlint の指摘に従う（運用は docs/writing-policy.md「AI の執筆姿勢」参照）
 
 ## 次のステップ
 

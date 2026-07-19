@@ -55,6 +55,6 @@ touch "$PROMPTED_FILE"
 cat <<'JSON'
 {
   "decision": "block",
-  "reason": "このセッションで ideas/ drafts/ articles/ に変更があったようです。\n会話を閉じる前に blog-reflect スキルを発動して、言語化の癖・進め方の気づき・既存スキルへの改善提案を knowledge/ に書き出してください。\n\n手順:\n1. 直近の会話を 3〜5 行で要約し、ユーザーに「今振り返りますか／後回しにしますか」と確認する\n2. 後回しならそのまま終了して良い\n3. 実施するなら blog-reflect SKILL.md の手順に沿って knowledge/ に追記する\n\nフラグは hook 側で管理するので、Claude 側で .reflect-state 等を touch する必要はありません。"
+  "reason": "このセッションで ideas/ drafts/ articles/ に変更があったようです。\n会話を閉じる前に blog-reflect スキルを発動して、言語化の癖・進め方の気づき・既存スキルへの改善提案を notes/ に書き出してください。\n\n手順:\n1. 直近の会話を 3〜5 行で要約し、ユーザーに「今振り返りますか／後回しにしますか」と確認する\n2. 後回しならそのまま終了して良い\n3. 実施するなら blog-reflect SKILL.md の手順に沿って notes/ に追記する\n\nフラグは hook 側で管理するので、Claude 側で .reflect-state 等を touch する必要はありません。"
 }
 JSON

@@ -1,12 +1,12 @@
 ---
 name: blog-reflect
-description: セッションを振り返り、書き手の癖・進め方・スキル改善案を knowledge/ に蓄積する。ワークフロー外の第5段階。手動で「振り返り」と入力するか、Stop hook（blog 系ファイルが更新されたセッション終了時）で自動発動。
+description: セッションを振り返り、書き手の癖・進め方・スキル改善案を notes/ に蓄積する。ワークフロー外の第5段階。手動で「振り返り」と入力するか、Stop hook（blog 系ファイルが更新されたセッション終了時）で自動発動。
 ---
 
 # blog-reflect
 
 ブログ執筆ワークフローの **振り返り段階**（ideate / outline / draft / polish の外側、第5段階）。
-セッション内で生まれた言語化のパターン・進め方の気づき・既存スキルへの改善案を `knowledge/` に書き出し、**次回以降のセッションで参照できる状態**にする。
+セッション内で生まれた言語化のパターン・進め方の気づき・既存スキルへの改善案を `notes/` に書き出し、**次回以降のセッションで参照できる状態**にする。
 
 このスキルは「書く」工程ではなく「**書いたあとに学ぶ**」工程。記事は触らない。
 
@@ -25,7 +25,7 @@ description: セッションを振り返り、書き手の癖・進め方・ス�
 ## 入力
 
 - 引数: 任意（`{slug}` を渡された場合はそのスラグに紐づくセッションメモを書く）
-- 暗黙の入力: 直近の会話履歴、`knowledge/` の既存ファイル
+- 暗黙の入力: 直近の会話履歴、`notes/` の既存ファイル
 
 ## 進め方
 
@@ -53,15 +53,15 @@ description: セッションを振り返り、書き手の癖・進め方・ス�
 
 以下のファイルに追記する。**既存項目との重複を作らない**：既に近い記述があれば追記でなく更新する。
 
-- `knowledge/writing-style.md`: 文体・好む／避ける言い回し・本人の言葉
-- `knowledge/process-notes.md`: 進め方の気づき・詰まったパターン
-- `knowledge/sessions/{YYYY-MM-DD}-{slug}.md`: そのセッション固有の生メモ（本スキル末尾「テンプレート」をベースに。後で見返す用、整形しすぎない）
+- `docs/writing-style.md`: 文体・好む／避ける言い回し・本人の言葉。日付見出しで追記せず、該当テーマの記述へ統合する（定点ドキュメント）
+- `notes/process-notes.md`: 進め方の気づき・詰まったパターン
+- `notes/sessions/{YYYY-MM-DD}-{slug}.md`: そのセッション固有の生メモ（本スキル末尾「テンプレート」をベースに。後で見返す用、整形しすぎない）
 
 書き換え案を**全文 diff として提示**し、ユーザー確認を取ってから Write/Edit する。
 
 ### 4. 既存スキルへの改善提案
 
-会話を振り返って、blog-\* スキルのいずれかの SKILL.md を変えると次回が楽になりそうな点があれば `knowledge/skill-improvements.md` に追記する。
+会話を振り返って、blog-\* スキルのいずれかの SKILL.md を変えると次回が楽になりそうな点があれば `notes/skill-improvements.md` に追記する。
 
 次の形式で書く。
 
@@ -74,29 +74,30 @@ description: セッションを振り返り、書き手の癖・進め方・ス�
 - 期待される効果: 次の記事で何が良くなるか
 ```
 
-**提案を SKILL.md に直接反映しない**。ユーザーが「これ反映して」と明示したら status を `applied` に変え、その時に SKILL.md を編集する。却下は `rejected` + 理由。
+**提案を SKILL.md に直接反映しない**。ユーザーが「これ反映して」と明示したら status を `applied` に変え、その時に SKILL.md を編集する。却下は `rejected` + 理由。反映済み（`applied`）・廃止（`superseded`）の項目は `notes/skill-improvements.md` から削除する。未適用（`proposed`）だけを残す（経緯は git 履歴に残る）。
 
 ### 5. 締め
 
 - 追記内容のサマリを 3 行で返す
-- 次のセッションで参照されることを伝える（`knowledge/` を AI が次回読みに行く）
+- 次のセッションで参照されることを伝える（`notes/` を AI が次回読みに行く）
 
 ## 重要原則
 
 - **ユーザーの言葉を AI 風に書き換えない**。引用は引用のまま残す
 - **記事ファイル（ideas/, drafts/, articles/）には触らない**。振り返りは記事編集ではない
-- **既存ナレッジと矛盾する気づきが出たら、上書きせず履歴として残す**（writing-style.md の「過去の判断履歴」欄）
+- **既存ナレッジと矛盾する気づきが出たら、上書きせず経緯を残す**（生の経緯は `notes/sessions/` に、確定したスタイルは `docs/writing-style.md` に反映）
 - **提案を勝手に適用しない**。skill-improvements.md にログ化するまでが AI の仕事
 - 1 メッセージで質問を畳みかけない（ideate と同じ原則）
 
 ## 出力
 
-- 追記: `knowledge/writing-style.md`, `knowledge/process-notes.md`, `knowledge/skill-improvements.md`
-- 新規: `knowledge/sessions/{YYYY-MM-DD}-{slug}.md`（slug が無ければ `{YYYY-MM-DD}-session.md`）
+- 追記: `notes/process-notes.md`, `notes/skill-improvements.md`
+- 統合: `docs/writing-style.md`（確定した文体・癖。テーマへ統合、日付追記しない）
+- 新規: `notes/sessions/{YYYY-MM-DD}-{slug}.md`（slug が無ければ `{YYYY-MM-DD}-session.md`）
 
 ## テンプレート
 
-`knowledge/sessions/{YYYY-MM-DD}-{slug}.md` の雛形。これをベースに埋める。
+`notes/sessions/{YYYY-MM-DD}-{slug}.md` の雛形。これをベースに埋める。
 
 ```markdown
 ---
@@ -130,4 +131,4 @@ stage: # ideate | outline | draft | polish | mixed
 
 ## 次のステップ
 
-完了後、ユーザーが次にブログ作業を始める時、AI は最初に `knowledge/` を読みに行くこと（CLAUDE.md に明記）。
+完了後、ユーザーが次にブログ作業を始める時、AI は最初に `notes/` を読みに行くこと（docs/writing-policy.md「運用ルール」に明記）。

@@ -22,9 +22,9 @@ AI と人間が共有する執筆のルール。AI（Claude Code）はこのル�
 ## 運用ルール
 
 - ワークフローの段階（ideate → outline → draft → polish）を飛ばさない。飛ばす場合はユーザーに確認する
-- ファイル名に日付を付けるのは `/blog-polish` で `articles/` に移す瞬間のみ
+- ファイル名の日付ルールは [directory-structure.md](./directory-structure.md)「命名規則」に従う
 - コミットはユーザーの明示的な指示があるまで実行しない
-- ブログ作業を始める前に `knowledge/` を読んで書き手の癖・過去の判断履歴を反映する
+- ブログ作業を始める前に [writing-style.md](./writing-style.md)（確定した文体・癖）と `notes/`（過去の進め方・気づき）を読んで反映する
 - セッション終了時、`ideas/`, `drafts/`, `articles/` のいずれかを更新していたら `/blog-reflect` を発動する（Stop hook が促す）
 
 ## 困ったとき

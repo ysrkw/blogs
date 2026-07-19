@@ -1,18 +1,18 @@
 ---
 name: book-log
-description: 読んだ本を knowledge/books/{slug}.md に記録する補助スキル。書誌を一次情報から取得し、概要の下書きと使いどころのヒアリングをして、索引 knowledge/books.md に1行追加する。「本を読んだ」「本を記録」「読書記録」で発動。
+description: 読んだ本を books/{slug}.md に記録する補助スキル。書誌を一次情報から取得し、概要の下書きと使いどころのヒアリングをして、索引 docs/books.md に1行追加する。「本を読んだ」「本を記録」「読書記録」で発動。
 ---
 
 # book-log
 
 読んだ本をナレッジに蓄積する補助スキル。ブログ執筆ワークフロー（ideate → outline → draft → polish）の外にある。
-記事の参考文献や根拠として後から再利用できるよう、本ごとに `knowledge/books/{slug}.md` を作り、索引 `knowledge/books.md` に1行追加する。
+記事の参考文献や根拠として後から再利用できるよう、本ごとに `books/{slug}.md` を作り、索引 `docs/books.md` に1行追加する。
 
 ## 位置づけ
 
 - ユーザーが「本を読んだ」と報告したときに発動する
-- 1冊につき1ファイル。詳細は `books/{slug}.md`、`books.md` はリンク索引と運用ルールだけを持つ
-- 既存の本の構造・記録項目は `knowledge/books.md` の運用ルールが正
+- 1冊につき1ファイル。詳細は `books/{slug}.md`、`docs/books.md` はリンク索引と運用ルールだけを持つ
+- 既存の本の構造・記録項目は `docs/books.md` の運用ルールが正
 
 ## 記録項目
 
@@ -49,8 +49,8 @@ description: 読んだ本を knowledge/books/{slug}.md に記録する補助ス�
 
 5. 保存
    - スラッグは原題か書名の `kebab-case`（例 `team-topologies`）。ユーザーに確認する
-   - 末尾「テンプレート」をベースに `knowledge/books/{slug}.md` を作る
-   - `knowledge/books.md` の「一覧」に1行追加する（書式は末尾「索引の行」）
+   - 末尾「テンプレート」をベースに `books/{slug}.md` を作る
+   - `docs/books.md` の「一覧」に1行追加する（書式は末尾「索引の行」）
 
 ## textlint に通す書き方
 
@@ -66,7 +66,7 @@ description: 読んだ本を knowledge/books/{slug}.md に記録する補助ス�
 
 ## テンプレート
 
-`knowledge/books/{slug}.md` の雛形。これをベースに埋める。
+`books/{slug}.md` の雛形。これをベースに埋める。
 
 ```markdown
 # {書名} / {著者}（{訳者} 訳）
@@ -87,10 +87,10 @@ description: 読んだ本を knowledge/books/{slug}.md に記録する補助ス�
 
 ## 索引の行
 
-`knowledge/books.md` の「一覧」に足す1行の書式。
+`docs/books.md` の「一覧」に足す1行の書式（索引は `docs/`、本ファイルは `books/` にあるのでリンクは `../books/` を付ける）。
 
 ```markdown
-- [{短縮タイトル}](books/{slug}.md) — {1行サマリ}。{使いどころメモあり・記事未使用／登場: {slug}（役割）}
+- [{短縮タイトル}](../books/{slug}.md) — {1行サマリ}。{使いどころメモあり・記事未使用／登場: {slug}（役割）}
 ```
 
 ## 重要原則
