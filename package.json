@@ -10,13 +10,16 @@
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
     "textlint": "textlint \"**/*.md\"",
-    "textlint:fix": "textlint --fix \"**/*.md\""
+    "textlint:fix": "textlint --fix \"**/*.md\"",
+    "markdownlint": "markdownlint-cli2 \"**/*.md\"",
+    "markdownlint:fix": "markdownlint-cli2 --fix \"**/*.md\""
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.1",
     "@commitlint/config-conventional": "^21.2.0",
     "@textlint-ja/textlint-rule-preset-ai-writing": "^1.7.0",
     "lefthook": "^2.1.10",
+    "markdownlint-cli2": "^0.23.1",
     "oxfmt": "^0.59.0",
     "oxlint": "^1.74.0",
     "textlint": "^15.7.1",

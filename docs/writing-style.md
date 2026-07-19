@@ -1,6 +1,6 @@
 # 執筆スタイル
 
-書き手（ユーザー）の文体・語彙・避けたい表現をまとめた定点ドキュメント。日付の記録ではなく「今のスタイルはこう」を書く。新しい気づきは日付見出しで足すのではなく、該当テーマの記述へ統合する。文体・執筆姿勢の運用は [writing-policy.md](./writing-policy.md)、校正ツールの設定は [proofreading.md](./proofreading.md) を参照。
+書き手（ユーザー）の文体・語彙・避けたい表現をまとめた定点ドキュメント。日付の記録ではなく「今のスタイルはこう」を書く。新しい気づきは日付見出しで足すのではなく、該当テーマの記述へ統合する。文体・執筆姿勢の運用は [writing-policy.md](./writing-policy.md)、校正ツールの設定は [markdown-proofreading.md](./markdown-proofreading.md) を参照。
 
 ## 文体
 

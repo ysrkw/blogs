@@ -13,3 +13,6 @@ pre-commit:
     textlint:
       glob: "**/*.md"
       run: pnpm exec textlint {staged_files}
+    markdownlint:
+      glob: "**/*.md"
+      run: pnpm exec markdownlint-cli2 {staged_files}

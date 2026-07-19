@@ -1,0 +1,22 @@
+{
+  // Markdown 構文の lint（日本語文章は textlint 側が担当）。
+  // ルールの調整理由は docs/markdown-style.md を参照。
+  "config": {
+    "default": true,
+    // 行長制限。日本語の長い段落があるため無効化。
+    "MD013": false,
+    // 末尾空白。行末に半角スペース 2 つで改行する規約に合わせ 2 スペースは許可。
+    "MD009": { "br_spaces": 2 },
+    // 記事は frontmatter の title と本文冒頭の H1 を両方持つ規約。
+    // frontmatter の title を H1 と数えないことで両立させる。
+    "MD025": { "front_matter_title": "" },
+    // 引用ブロックの間の空行。振り返りメモで別々の引用を空行で並べる書き方を許可。
+    "MD028": false,
+    // 順序リストの番号。見出し（例: ### 1.5）を挟んで手順を継続する書き方があり、
+    // 番号の振り直しを強制しないため無効化。
+    "MD029": false,
+  },
+  // 検査対象は引数で渡す（pnpm script は "**/*.md"、lefthook/hook は対象ファイル）。
+  // globs をここに置くと引数とマージされ、対象を絞れなくなるため置かない。
+  "ignores": ["node_modules"],
+}
