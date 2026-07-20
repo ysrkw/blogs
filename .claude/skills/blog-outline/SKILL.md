@@ -1,22 +1,22 @@
 ---
 name: blog-outline
-description: コンセプトメモから記事の構成（タイトル候補・リード方針・H2/H3）を作る。drafts/{slug}/outline.md に保存する。引数 {slug} を受け取り ideas/{slug}.md を読む。「構成を作る」「アウトライン」で発動。
+description: コンセプトメモから記事の構成（タイトル候補・リード方針・H2/H3）を作る。works/{slug}/outline.md に保存する。引数 {slug} を受け取り works/{slug}/idea.md を読む。「構成を作る」「アウトライン」で発動。
 ---
 
 # blog-outline
 
 ブログ執筆ワークフローの 第2段階。
-`ideas/{slug}.md` を入力に、記事の骨組み（タイトル・リード方向・見出し構造）を作る。
+`works/{slug}/idea.md` を入力に、記事の骨組み（タイトル・リード方向・見出し構造）を作る。
 
 ## 入力
 
-- 引数: `{slug}`（省略時は `ideas/` を一覧表示してユーザーに選ばせる）
-- 読み込み: `ideas/{slug}.md`
+- 引数: `{slug}`（省略時は `works/` 配下で `idea.md` はあるが `outline.md` が無いものを一覧表示してユーザーに選ばせる）
+- 読み込み: `works/{slug}/idea.md`
 
 ## 進め方
 
 1. コンセプトの再確認
-   - `ideas/{slug}.md` を読み、一文コンセプト・読者像・独自角度を要約してユーザーに提示
+   - `works/{slug}/idea.md` を読み、一文コンセプト・読者像・独自角度を要約してユーザーに提示
    - 「この理解で合っていますか？」と確認。ズレていれば ideate に戻ることを提案
 
 ### 1.5 仮タイトル・仮方向のヒアリング
@@ -43,7 +43,7 @@ description: コンセプトメモから記事の構成（タイトル候補・�
 
 5. 保存
    - 本スキル末尾「テンプレート」のコードブロックをベースに埋める
-   - 出力先: `drafts/{slug}/outline.md`（ディレクトリも `{slug}` のまま、日付なし）
+   - 出力先: `works/{slug}/outline.md`（`idea.md` と同じディレクトリ、日付なし）
    - frontmatter の `status: outline` に更新
 
 ## 重要原則
@@ -55,7 +55,7 @@ description: コンセプトメモから記事の構成（タイトル候補・�
 
 ## テンプレート
 
-`drafts/{slug}/outline.md` の雛形。これをベースに埋める。frontmatter のフィールド定義は docs/templates.md を正規とする。
+`works/{slug}/outline.md` の雛形。これをベースに埋める。frontmatter のフィールド定義は docs/templates.md を正規とする。
 
 ```markdown
 ---
@@ -107,4 +107,4 @@ updated: YYYY-MM-DD
 
 ## 次のステップ
 
-完了後、`/blog-draft {slug}` で本文の執筆段階へ進めるとユーザーに伝える。
+完了後、`/blog-writing {slug}` で本文の執筆段階へ進めるとユーザーに伝える。

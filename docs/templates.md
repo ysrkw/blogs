@@ -4,7 +4,7 @@
 
 ## 記事 frontmatter スキーマ
 
-記事ファイル（`ideas/`・`drafts/`・`articles/`）の frontmatter はこのスキーマを正規とする。各段階のスキル（`/blog-ideate`・`/blog-outline`・`/blog-draft`・`/blog-polish`）が出力する雛形の frontmatter 部分はここに従う。フィールドの意味を各スキルで再定義しない。
+記事ファイル（`works/`・`articles/`）の frontmatter はこのスキーマを正規とする。各段階のスキル（`/blog-ideate`・`/blog-outline`・`/blog-writing`・`/blog-publish`）が出力する雛形の frontmatter 部分はここに従う。フィールドの意味を各スキルで再定義しない。
 
 ```yaml
 ---
@@ -26,7 +26,7 @@ published_url: # Qiita の公開 URL。公開後に記録
 
 ## 改善提案ログの項目
 
-`docs/improvements.md` に 1 提案を追記するときの雛形。`/blog-reflect` の第4ステップが使う。
+`docs/improvements.md` に 1 提案を追記するときの雛形。`/retrospective` の第4ステップが使う。
 
 ```markdown
 ### YYYY-MM-DD: {対象} - 一行要約

@@ -1,29 +1,37 @@
 # ワークフロー
 
-このリポジトリのワークフローは「記事の執筆」と「本の記録」の 2 系統。各スキルの一覧は [skills.md](./skills.md) を参照。
+このリポジトリのワークフローは「記事の執筆」「本の記録」「振り返り」の 3 系統。各スキルの一覧は [skills.md](./skills.md) を参照。
 
 ## 記事の執筆
 
-記事は 4 つの段階を順に通って公開される。段階を飛ばさない。飛ばす場合はその場で確認する。
+記事はいくつかの段階を順に通って公開される。段階を飛ばさない。飛ばす場合はその場で確認する。draft と publish の間には、満足するまで何度でも回せる推敲ループ（blog-review）を挟む。
 
 ```mermaid
 flowchart TD
-    A["/blog-ideate"] -->|"ideas/{slug}.md"| B["/blog-outline"]
-    B -->|"drafts/{slug}/outline.md"| C["/blog-draft"]
-    C -->|"drafts/{slug}/article.md"| D["/blog-polish"]
+    A["/blog-ideate"] -->|"works/{slug}/idea.md"| B["/blog-outline"]
+    B -->|"works/{slug}/outline.md"| C["/blog-writing"]
+    C -->|"works/{slug}/article.md"| W["/blog-review"]
+    W -.->|"満足するまで何度でも"| W
+    W -->|"推敲OK"| D["/blog-publish"]
     D --> E["articles/{YYYY-MM-DD}-{slug}.md"]
-    C & D -.->|"通し読み"| W["/blog-walkthrough"]
-    A & B & C & D -.->|"セッション終了時"| R["/blog-reflect"]
-    R -->|"docs/ の振り返りメモ"| R
+    C & W -.->|"逃がした候補があれば"| T["works/{slug}/todo.md"]
 ```
+
+各段階の出力は同じ `works/{slug}/` ディレクトリに集まる（idea.md, outline.md, article.md）。1 slug 1 ディレクトリで、公開前まではここが唯一の置き場になる。
 
 各段階の詳細は対応する `.claude/skills/blog-*/SKILL.md` を参照。
 
-`/blog-reflect` はワークフロー外の **第5段階**。セッション内で生まれた言語化の癖・進め方の気づき・blog システムへの改善提案を `docs/` の振り返りメモに蓄積する。`ideas/`, `drafts/`, `articles/` が更新されたセッションの終了時、Stop hook が自動で振り返りを促す。
+`/blog-review` は draft 以降のどの段階からでも呼べる推敲ループ。全体の通し読み・textlint/humanizer の機械チェック・用語ブレなどの人判断チェックをまとめて担う。1 回では指摘を出し切らない設計のため、納得いくまで何度でも呼び直す。`/blog-publish` は推敲が済んだことを前提に、frontmatter 確定・参考文献の整形・ファイル移動・コミット案内という公開作業だけを行う。
 
-`/blog-walkthrough` は draft 以降のどの段階からでも呼べる通し読み。
+`works/{slug}/todo.md` は最初から存在するファイルではない。`/blog-writing` 中に湧いた新しい角度・追加セクション案、`/blog-review` の通し読みで見つかった大きめの課題を、本文に即書かず逃がす先として初めて作られる。生まれる条件は [structure.md](./structure.md)「works/{slug}/todo.md が生まれるケース」を参照。
 
 各段階が出力する記事ファイルの frontmatter スキーマは [templates.md](./templates.md) を参照。
+
+## 振り返り
+
+`/retrospective` は記事の執筆・本の記録どちらの段階の出力でもなく、`blog-*` の命名規則にも属さないシステム側のスキル。特定の段階に紐づく図では表しにくい。`works/`, `articles/` のどちらかが更新されたセッションの終了時、Stop hook が横断的に発火する仕組みだからだ。
+
+セッション内で生まれた言語化の癖・進め方の気づき・blog システムへの改善提案を `docs/` の振り返りメモに蓄積する。詳細は `.claude/skills/retrospective/SKILL.md` を参照。
 
 ## 本の記録
 

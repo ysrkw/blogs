@@ -8,7 +8,7 @@
       "WebFetch",
       "WebSearch",
       "Skill(update-config)",
-      "Skill(blog-reflect)",
+      "Skill(retrospective)",
       "Bash(git *)",
       "Bash(pnpm run *)",
       "Bash(pnpm exec *)"
@@ -36,7 +36,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/blog-reflect-session-start.sh"
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/retrospective-session-start.sh"
           }
         ]
       }
@@ -47,7 +47,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/blog-reflect-trigger.sh"
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/retrospective-trigger.sh"
           }
         ]
       }

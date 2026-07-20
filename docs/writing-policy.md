@@ -7,12 +7,12 @@ AI と人間が共有する執筆のルール。AI（Claude Code）はこのル�
 - 文章を書くのが得意ではない。AI に質問してもらいながら自分の考えを言語化したい
 - テーマは AI 時代の開発（Claude Code・LLM ツール・ワークフロー設計など）の一次体験
 - 文体デフォルト: です・ます調、一人称は「私」、温度感はカジュアル寄り
-  - 各記事で変えてもよい。`/blog-draft` の冒頭で確認する
+  - 各記事で変えてもよい。`/blog-writing` の冒頭で確認する
 
 ## AI の執筆姿勢
 
 - 書き手を代替しない。提案 → 本人の判断 → 反映、の往復で進める
-- `/blog-draft` ではセクション単位で同意を取り、丸ごと書き出さない
+- `/blog-writing` ではセクション単位で同意を取り、丸ごと書き出さない
 - ユーザーの言葉をそのまま使う。AI 風の言い換えを勝手にしない
 - 断定する文には根拠を添える（測定値、参照リンク、自分の試行回数など）
 - 専門用語は初出で 1 行補足
@@ -21,19 +21,19 @@ AI と人間が共有する執筆のルール。AI（Claude Code）はこのル�
 
 ## 運用ルール
 
-- ワークフローの段階（ideate → outline → draft → polish）を飛ばさない。飛ばす場合はユーザーに確認する
+- ワークフローの段階（ideate → outline → draft → review → publish）を飛ばさない。飛ばす場合はユーザーに確認する
 - ファイル名の日付ルールは [structure.md](./structure.md)「命名規則」に従う
 - コミットは原則ユーザーの明示的な指示を待つ。例外として draft 中は todo 項目の消化ごとに段階的コミットしてよい（push は必ず別途指示を待つ）
 - ブログ作業を始める前に [writing-style.md](./writing-style.md)（文体・癖）と振り返りメモ（[process-notes.md](./process-notes.md)・[improvements.md](./improvements.md)・`session-logs/`）を読んで反映する
-- セッション終了時、`ideas/`, `drafts/`, `articles/` のいずれかを更新していたら `/blog-reflect` を発動する（Stop hook が促す）
+- セッション終了時、`works/`, `articles/` のいずれかを更新していたら `/retrospective` を発動する（Stop hook が促す）
 
 ## 段階ごとの進め方
 
 過去のセッションで安定して効いた進め方。生の気づき・経緯は [process-notes.md](./process-notes.md) に日付つきで残す。
 
 - outline はスナップショット。draft で全文を通して見て補強角度が出たら、outline に戻さず draft 内で拡張してよい。良いものが見つかれば記事を広げる。
-- draft で湧いた補強候補は本文に即書かず `drafts/{slug}/todo.md` へ逃がす。発散を止めてベースを先に固める。再開時はまず todo.md を読む。
-- 消化済み todo は `/blog-reflect` で notes へ吸収してから todo.md から削除する（判断の経緯は git 履歴に残る）。
+- draft で湧いた補強候補は本文に即書かず `works/{slug}/todo.md` へ逃がす。発散を止めてベースを先に固める。再開時はまず todo.md を読む。
+- 消化済み todo は `/retrospective` で notes へ吸収してから todo.md から削除する（判断の経緯は git 履歴に残る）。
 - 図が要るときは [diagrams.md](./diagrams.md) に従う。本文の文脈と関係ない図は作らない。
 - polish では文を切るより、まず落とせる読点を削る。文頭の呼吸の読点（「つまり、」等）は残し、主語・話題の直後の落とせる読点を削る。
 

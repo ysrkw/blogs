@@ -1,12 +1,14 @@
 ---
-name: blog-reflect
-description: セッションを振り返り、書き手の癖・進め方・システム改善案を docs/ に蓄積する。ワークフロー外の第5段階。手動で「振り返り」と入力するか、Stop hook（blog 系ファイルが更新されたセッション終了時）で自動発動。
+name: retrospective
+description: セッションを振り返り、書き手の癖・進め方・システム改善案を docs/ に蓄積する。ワークフロー外・記事執筆スキルの命名規則（blog-*）にも属さないシステム側のスキル。手動で「振り返り」と入力するか、Stop hook（blog 系ファイルが更新されたセッション終了時）で自動発動。
 ---
 
-# blog-reflect
+# retrospective
 
-ブログ執筆ワークフローの **振り返り段階**（ideate / outline / draft / polish の外側、第5段階）。
+ブログ執筆ワークフローの **振り返り段階**（ideate / outline / draft / review / publish の外側）。
 セッション内で生まれた言語化のパターン・進め方の気づき・blog システムへの改善案を `docs/` に書き出し、**次回以降のセッションで参照できる状態**にする。
+
+記事を書く `blog-*` スキル群とは別枠。記事のスラグに紐づかず、自動発動（Stop hook）で動くシステム側のスキルのため `blog-` 接頭辞を持たない。
 
 このスキルは「書く」工程ではなく「**書いたあとに学ぶ**」工程。記事は触らない。
 
@@ -18,8 +20,8 @@ description: セッションを振り返り、書き手の癖・進め方・シ�
 
 ## いつ発動するか
 
-1. ユーザーが「振り返り」「リフレクト」「`/blog-reflect`」と発した時
-2. Stop hook が「このセッション中に `ideas/**`, `drafts/**`, `articles/**` のいずれかが更新された」と判定した時
+1. ユーザーが「振り返り」「リフレクト」「`/retrospective`」と発した時
+2. Stop hook が「このセッション中に `works/**`, `articles/**` のいずれかが更新された」と判定した時
    - hook 経路の場合、まず**振り返るかどうか**を 1 行確認する（拒否されたらスキップ）
 
 ## 入力
@@ -66,7 +68,7 @@ description: セッションを振り返り、書き手の癖・進め方・シ�
 - スキル（`.claude/skills/**/SKILL.md`）
 - ドキュメント（`docs/writing-policy.md` / `docs/structure.md` / `docs/templates.md` など）
 - ワークフロー・命名規則・運用ルール
-- **この振り返りの仕組み自体**（blog-reflect / 振り返りメモの構造）。振り返りが回しにくかった点も改善対象に含める
+- **この振り返りの仕組み自体**（retrospective / 振り返りメモの構造）。振り返りが回しにくかった点も改善対象に含める
 
 1 項目の書式は [docs/templates.md](../../../docs/templates.md)「改善提案ログの項目」に従う。
 
@@ -80,7 +82,7 @@ description: セッションを振り返り、書き手の癖・進め方・シ�
 ## 重要原則
 
 - **ユーザーの言葉を AI 風に書き換えない**。引用は引用のまま残す
-- **記事ファイル（ideas/, drafts/, articles/）には触らない**。振り返りは記事編集ではない
+- **記事ファイル（works/, articles/）には触らない**。振り返りは記事編集ではない
 - **既存ナレッジと矛盾する気づきが出たら、上書きせず経緯を残す**（生の経緯は `docs/session-logs/` に、確定したスタイルは `docs/writing-style.md` に反映）
 - **提案を勝手に適用しない**。improvements.md にログ化するまでが AI の仕事
 - 1 メッセージで質問を畳みかけない（ideate と同じ原則）
@@ -99,7 +101,7 @@ description: セッションを振り返り、書き手の癖・進め方・シ�
 ---
 date: YYYY-MM-DD
 slug: # 関連スラグ（なければ session）
-stage: # ideate | outline | draft | polish | mixed
+stage: # ideate | outline | draft | review | publish | mixed
 ---
 
 # {YYYY-MM-DD} {slug}

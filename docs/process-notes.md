@@ -1,6 +1,6 @@
 # process-notes
 
-ワークフロー（ideate → outline → draft → polish）を通して効いた進め方、詰まったパターンを蓄積する。
+ワークフロー（ideate → outline → draft → review → publish）を通して効いた進め方、詰まったパターンを蓄積する。
 
 ## 効いた進め方
 
@@ -38,7 +38,7 @@ critical-thinking-with-coding-agents で見出し「論理的思考は線路を�
 - 2026-05-26 organization-as-software：outline 中盤で「体験談中心 → 思考フレーム提示中心」に軸を切り直した。ideate には戻らず outline 内で再定義して進めた
 - 2026-06-21 organization-as-software：draft 段階で outline に無い新 H2「なぜ組織は変わり続けるのか」を丸ごと追加。本文の具体に向き合うと抜けた土台（組織再編の動機＝成長圧）が見える。outline に戻らず draft 内で取り込んだ
 
-## 推敲（polish）の進め方
+## 推敲（review）の進め方
 
 - **文を切るより、まず落とせる読点を削る**（本人申し送り）。一文の長さそのものより読点（`、`）の密度のほうが気になるポイント。文頭の呼吸の読点（「つまり、」「もちろん、」等）は残し、主語・話題の直後にある落とせる読点を削る（2026-06-21 organization-as-software polish：約 24 箇所）
 - **humanizer は検出ツールとして使い、適用は 1 項目ずつ本人判断**。ダッシュ（§14）は全削除したが、宣伝臭・三点強調・アフォリズム等の一括書き換えは「一次体験・語りが削れる」ため不適用とした（2026-06-21）

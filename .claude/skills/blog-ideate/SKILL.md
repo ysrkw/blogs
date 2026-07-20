@@ -1,12 +1,12 @@
 ---
 name: blog-ideate
-description: ブログ記事のコンセプトを対話で発掘する。質問駆動でユーザーの一次体験から記事のネタを引き出し、ideas/{slug}.md に保存する。引数なしで起動。「ネタ出し」「記事のアイデア」「コンセプトを考えたい」で発動。
+description: ブログ記事のコンセプトを対話で発掘する。質問駆動でユーザーの一次体験から記事のネタを引き出し、works/{slug}/idea.md に保存する。引数なしで起動。「ネタ出し」「記事のアイデア」「コンセプトを考えたい」で発動。
 ---
 
 # blog-ideate
 
 このリポジトリのブログ執筆ワークフローの 第1段階。
-コンセプトをゼロから対話で発掘し、`ideas/{slug}.md` に保存するスキル。
+コンセプトをゼロから対話で発掘し、`works/{slug}/idea.md` に保存するスキル。
 
 ## 前提
 
@@ -42,13 +42,13 @@ description: ブログ記事のコンセプトを対話で発掘する。質問�
 
 5. 保存
    - スラグを `kebab-case-title` で提案 → ユーザー確認
-   - ファイル名に日付は付けない（`ideas/{slug}.md`）
+   - ファイル名に日付は付けない（`works/{slug}/idea.md`）
    - 本スキル末尾「テンプレート」のコードブロックをベースに埋めて書き出す
    - `created` には今日の日付（YYYY-MM-DD）
 
 ## 出力
 
-- `ideas/{slug}.md`
+- `works/{slug}/idea.md`
 - frontmatter の `status: idea` を維持
 - 「ブレストメモ」欄には対話で出た断片を整形しすぎず残す（次段階の素材）
 
@@ -61,7 +61,7 @@ description: ブログ記事のコンセプトを対話で発掘する。質問�
 
 ## テンプレート
 
-`ideas/{slug}.md` の雛形。これをベースに埋める。frontmatter のフィールド定義は docs/templates.md を正規とする。
+`works/{slug}/idea.md` の雛形。これをベースに埋める。frontmatter のフィールド定義は docs/templates.md を正規とする。
 
 ```markdown
 ---
