@@ -24,12 +24,12 @@ AI と人間が共有する執筆のルール。AI（Claude Code）はこのル�
 - ワークフローの段階（ideate → outline → draft → polish）を飛ばさない。飛ばす場合はユーザーに確認する
 - ファイル名の日付ルールは [structure.md](./structure.md)「命名規則」に従う
 - コミットは原則ユーザーの明示的な指示を待つ。例外として draft 中は todo 項目の消化ごとに段階的コミットしてよい（push は必ず別途指示を待つ）
-- ブログ作業を始める前に [writing-style.md](./writing-style.md)（確定した文体・癖）と `notes/`（過去の進め方・気づき）を読んで反映する
+- ブログ作業を始める前に [writing-style.md](./writing-style.md)（文体・癖）と振り返りメモ（[process-notes.md](./process-notes.md)・[improvements.md](./improvements.md)・`docs/sessions/`）を読んで反映する
 - セッション終了時、`ideas/`, `drafts/`, `articles/` のいずれかを更新していたら `/blog-reflect` を発動する（Stop hook が促す）
 
 ## 段階ごとの進め方
 
-過去のセッションで安定して効いた進め方。生の気づき・経緯は [notes.md](./notes.md)（`notes/process-notes.md`）に日付つきで残す。
+過去のセッションで安定して効いた進め方。生の気づき・経緯は [process-notes.md](./process-notes.md) に日付つきで残す。
 
 - outline はスナップショット。draft で全文を通して見て補強角度が出たら、outline に戻さず draft 内で拡張してよい。良いものが見つかれば記事を広げる。
 - draft で湧いた補強候補は本文に即書かず `drafts/{slug}/todo.md` へ逃がす。発散を止めてベースを先に固める。再開時はまず todo.md を読む。

@@ -14,12 +14,12 @@ flowchart TD
     D --> E["articles/{YYYY-MM-DD}-{slug}.md"]
     C & D -.->|"通し読み"| W["/blog-walkthrough"]
     A & B & C & D -.->|"セッション終了時"| R["/blog-reflect"]
-    R -->|"notes/**"| R
+    R -->|"docs/ の振り返りメモ"| R
 ```
 
 各段階の詳細は対応する `.claude/skills/blog-*/SKILL.md` を参照。
 
-`/blog-reflect` はワークフロー外の **第5段階**。セッション内で生まれた言語化の癖・進め方の気づき・既存スキルへの改善提案を `notes/` に蓄積する。`ideas/`, `drafts/`, `articles/` が更新されたセッションの終了時、Stop hook が自動で振り返りを促す。
+`/blog-reflect` はワークフロー外の **第5段階**。セッション内で生まれた言語化の癖・進め方の気づき・blog システムへの改善提案を `docs/` の振り返りメモに蓄積する。`ideas/`, `drafts/`, `articles/` が更新されたセッションの終了時、Stop hook が自動で振り返りを促す。
 
 `/blog-walkthrough` は draft 以降のどの段階からでも呼べる通し読み。
 
@@ -27,12 +27,12 @@ flowchart TD
 
 ## 本の記録
 
-読んだ本を `books/` に蓄積し、記事の参考文献や根拠として再利用しやすくする。記事の執筆フローとは独立して、本を読んだタイミングで回す。
+読んだ本を `docs/books/` に蓄積し、記事の参考文献や根拠として再利用しやすくする。記事の執筆フローとは独立して、本を読んだタイミングで回す。
 
 ```mermaid
 flowchart TD
     A["本を読んだ"] --> B["/book-log"]
-    B -->|"書誌の裏取り・概要下書き・使いどころのヒアリング"| C["books/{slug}.md"]
+    B -->|"書誌の裏取り・概要下書き・使いどころのヒアリング"| C["docs/books/{slug}.md"]
     B -->|"1行追加"| D["索引 docs/books.md"]
 ```
 

@@ -1,12 +1,12 @@
 ---
 name: blog-reflect
-description: セッションを振り返り、書き手の癖・進め方・スキル改善案を notes/ に蓄積する。ワークフロー外の第5段階。手動で「振り返り」と入力するか、Stop hook（blog 系ファイルが更新されたセッション終了時）で自動発動。
+description: セッションを振り返り、書き手の癖・進め方・システム改善案を docs/ に蓄積する。ワークフロー外の第5段階。手動で「振り返り」と入力するか、Stop hook（blog 系ファイルが更新されたセッション終了時）で自動発動。
 ---
 
 # blog-reflect
 
 ブログ執筆ワークフローの **振り返り段階**（ideate / outline / draft / polish の外側、第5段階）。
-セッション内で生まれた言語化のパターン・進め方の気づき・既存スキルへの改善案を `notes/` に書き出し、**次回以降のセッションで参照できる状態**にする。
+セッション内で生まれた言語化のパターン・進め方の気づき・blog システムへの改善案を `docs/` に書き出し、**次回以降のセッションで参照できる状態**にする。
 
 このスキルは「書く」工程ではなく「**書いたあとに学ぶ**」工程。記事は触らない。
 
@@ -14,7 +14,7 @@ description: セッションを振り返り、書き手の癖・進め方・ス�
 
 - セッション内に閉じている細かな対話（言い換えた言葉、ボツにした案、詰まったポイント、好んだ表現）を失わない
 - 書き手本人の言語化の癖を未来の自分に渡す
-- 既存スキル（blog-ideate/outline/draft/polish）の改善提案を**ログ化**し、ユーザー判断で SKILL.md に反映する自己改善ループを回す
+- blog システム（スキル・docs・ワークフロー・この振り返りの仕組み自体）の改善提案を**ログ化**し、ユーザー判断で反映する自己改善ループを回す
 
 ## いつ発動するか
 
@@ -25,7 +25,7 @@ description: セッションを振り返り、書き手の癖・進め方・ス�
 ## 入力
 
 - 引数: 任意（`{slug}` を渡された場合はそのスラグに紐づくセッションメモを書く）
-- 暗黙の入力: 直近の会話履歴、`notes/` の既存ファイル
+- 暗黙の入力: 直近の会話履歴、`docs/` の既存の振り返りメモ（process-notes.md / improvements.md / sessions/）
 
 ## 進め方
 
@@ -54,50 +54,46 @@ description: セッションを振り返り、書き手の癖・進め方・ス�
 以下のファイルに追記する。**既存項目との重複を作らない**：既に近い記述があれば追記でなく更新する。
 
 - `docs/writing-style.md`: 文体・好む／避ける言い回し・本人の言葉。日付見出しで追記せず、該当テーマの記述へ統合する（定点ドキュメント）
-- `notes/process-notes.md`: 進め方の気づき・詰まったパターン
-- `notes/sessions/{YYYY-MM-DD}-{slug}.md`: そのセッション固有の生メモ（本スキル末尾「テンプレート」をベースに。後で見返す用、整形しすぎない）
+- `docs/process-notes.md`: 進め方の気づき・詰まったパターン
+- `docs/sessions/{YYYY-MM-DD}-{slug}.md`: そのセッション固有の生メモ（本スキル末尾「テンプレート」をベースに。後で見返す用、整形しすぎない）
 
 書き換え案を**全文 diff として提示**し、ユーザー確認を取ってから Write/Edit する。
 
-### 4. 既存スキルへの改善提案
+### 4. blog システムへの改善提案
 
-会話を振り返って、blog-\* スキルのいずれかの SKILL.md を変えると次回が楽になりそうな点があれば `notes/skill-improvements.md` に追記する。
+「どのスキルを直すか」に絞らない。**次のセッションが楽になるよう、この blog システムのどこを変えるとよいか**を会話から拾い、`docs/improvements.md` に追記する。対象は次のいずれでもよい。
 
-次の形式で書く。
+- スキル（`.claude/skills/**/SKILL.md`）
+- ドキュメント（`docs/writing-policy.md` / `docs/structure.md` / `docs/templates.md` など）
+- ワークフロー・命名規則・運用ルール
+- **この振り返りの仕組み自体**（blog-reflect / 振り返りメモの構造）。振り返りが回しにくかった点も改善対象に含める
 
-```markdown
-### YYYY-MM-DD: blog-{name} - 一行要約
+1 項目の書式は [docs/templates.md](../../../docs/templates.md)「改善提案ログの項目」に従う。
 
-- status: proposed
-- 背景: このセッションで何が起きたか（具体的に）
-- 変更案: SKILL.md のどの章をどう書き換えるか（before/after の抜粋）
-- 期待される効果: 次の記事で何が良くなるか
-```
-
-**提案を SKILL.md に直接反映しない**。ユーザーが「これ反映して」と明示したら status を `applied` に変え、その時に SKILL.md を編集する。却下は `rejected` + 理由。反映済み（`applied`）・廃止（`superseded`）の項目は `notes/skill-improvements.md` から削除する。未適用（`proposed`）だけを残す（経緯は git 履歴に残る）。
+**提案を対象ファイルに直接反映しない**。`docs/improvements.md` に載るのは未適用の提案だけで、ステータスのフラグは持たない。ユーザーが「これ反映して」と明示したらその場で対象ファイルを編集し、この項目を削除する。却下したときも項目を削除する。採否とその理由は commit メッセージに書く（経緯は git 履歴で辿る）。
 
 ### 5. 締め
 
 - 追記内容のサマリを 3 行で返す
-- 次のセッションで参照されることを伝える（`notes/` を AI が次回読みに行く）
+- 次のセッションで参照されることを伝える（`docs/` の振り返りメモを AI が次回読みに行く）
 
 ## 重要原則
 
 - **ユーザーの言葉を AI 風に書き換えない**。引用は引用のまま残す
 - **記事ファイル（ideas/, drafts/, articles/）には触らない**。振り返りは記事編集ではない
-- **既存ナレッジと矛盾する気づきが出たら、上書きせず経緯を残す**（生の経緯は `notes/sessions/` に、確定したスタイルは `docs/writing-style.md` に反映）
-- **提案を勝手に適用しない**。skill-improvements.md にログ化するまでが AI の仕事
+- **既存ナレッジと矛盾する気づきが出たら、上書きせず経緯を残す**（生の経緯は `docs/sessions/` に、確定したスタイルは `docs/writing-style.md` に反映）
+- **提案を勝手に適用しない**。improvements.md にログ化するまでが AI の仕事
 - 1 メッセージで質問を畳みかけない（ideate と同じ原則）
 
 ## 出力
 
-- 追記: `notes/process-notes.md`, `notes/skill-improvements.md`
+- 追記: `docs/process-notes.md`, `docs/improvements.md`
 - 統合: `docs/writing-style.md`（確定した文体・癖。テーマへ統合、日付追記しない）
-- 新規: `notes/sessions/{YYYY-MM-DD}-{slug}.md`（slug が無ければ `{YYYY-MM-DD}-session.md`）
+- 新規: `docs/sessions/{YYYY-MM-DD}-{slug}.md`（slug が無ければ `{YYYY-MM-DD}-session.md`）
 
 ## テンプレート
 
-`notes/sessions/{YYYY-MM-DD}-{slug}.md` の雛形。これをベースに埋める。
+`docs/sessions/{YYYY-MM-DD}-{slug}.md` の雛形。これをベースに埋める。
 
 ```markdown
 ---
@@ -131,4 +127,4 @@ stage: # ideate | outline | draft | polish | mixed
 
 ## 次のステップ
 
-完了後、ユーザーが次にブログ作業を始める時、AI は最初に `notes/` を読みに行くこと（docs/writing-policy.md「運用ルール」に明記）。
+完了後、ユーザーが次にブログ作業を始める時、AI は最初に `docs/` の振り返りメモ（process-notes.md / improvements.md / sessions/）を読みに行く。運用ルールは docs/writing-policy.md に明記。

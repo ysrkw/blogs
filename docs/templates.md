@@ -1,6 +1,6 @@
-# 記事テンプレート
+# テンプレート
 
-ブログ記事に関するテンプレートを種類ごとに見出しで分ける。テンプレが増えたらここに節を足し、大きくなったら `templates/` ディレクトリへ分割する。
+リポジトリで使うテンプレートを種類ごとに見出しで分ける。テンプレが増えたらここに節を足し、大きくなったら `templates/` ディレクトリへ分割する。
 
 ## 記事 frontmatter スキーマ
 
@@ -23,3 +23,16 @@ published_url: # Qiita の公開 URL。公開後に記録
 - `tags` / `summary` は outline 段階では省略してよい。draft 以降で埋める
 - `published_url` は publish 後にのみ付く（手順は [release.md](./release.md)）
 - 本文は frontmatter 直後に `# {title}`（`title` と同じ文言の H1）を置いてから書き始める。H1 の下に 1 行空けてリード文を続ける
+
+## 改善提案ログの項目
+
+`docs/improvements.md` に 1 提案を追記するときの雛形。`/blog-reflect` の第4ステップが使う。
+
+```markdown
+### YYYY-MM-DD: {対象} - 一行要約
+
+- 対象: 書き換えるファイル（例: blog-outline の SKILL.md / docs/structure.md / ワークフロー）
+- 背景: このセッションで何が起きたか（具体的に）
+- 変更案: どの章をどう書き換えるか（before/after の抜粋）
+- 期待される効果: 次のセッションで何が良くなるか
+```
