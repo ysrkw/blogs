@@ -1,6 +1,11 @@
 ---
 name: blog-writing
 description: アウトラインから本文を書く。セクション単位で案を提示しユーザーと合意しながら進める。works/{slug}/article.md に保存する。引数 {slug} を受け取る。「下書き」「本文を書く」で発動。
+argument-hint: "{slug}"
+allowed-tools:
+  - Read
+  - Write
+  - Edit
 ---
 
 # blog-writing

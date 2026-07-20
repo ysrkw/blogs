@@ -1,6 +1,11 @@
 ---
 name: retrospective
 description: セッションを振り返り、書き手の癖・進め方・システム改善案を docs/ に蓄積する。ワークフロー外・記事執筆スキルの命名規則（blog-*）にも属さないシステム側のスキル。手動で「振り返り」と入力するか、Stop hook（blog 系ファイルが更新されたセッション終了時）で自動発動。
+argument-hint: "[slug]（省略可）"
+allowed-tools:
+  - Read
+  - Write
+  - Edit
 ---
 
 # retrospective

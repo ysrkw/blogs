@@ -1,6 +1,11 @@
 ---
 name: blog-outline
 description: コンセプトメモから記事の構成（タイトル候補・リード方針・H2/H3）を作る。works/{slug}/outline.md に保存する。引数 {slug} を受け取り works/{slug}/idea.md を読む。「構成を作る」「アウトライン」で発動。
+argument-hint: "{slug}"
+allowed-tools:
+  - Read
+  - Write
+  - Glob
 ---
 
 # blog-outline

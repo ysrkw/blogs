@@ -1,11 +1,17 @@
 ---
 name: book-log
 description: 読んだ本を docs/books/{slug}.md に記録する補助スキル。書誌を一次情報から取得し、概要の下書きと使いどころのヒアリングをして、索引 docs/books.md に1行追加する。「本を読んだ」「本を記録」「読書記録」で発動。
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - WebSearch
+  - WebFetch
 ---
 
 # book-log
 
-読んだ本をナレッジに蓄積する補助スキル。ブログ執筆ワークフロー（ideate → outline → draft → polish）の外にある。
+読んだ本をナレッジに蓄積する補助スキル。ブログ執筆ワークフロー（ideate → outline → draft → review → publish）の外にある。
 記事の参考文献や根拠として後から再利用できるよう、本ごとに `docs/books/{slug}.md` を作り、索引 `docs/books.md` に1行追加する。
 
 ## 位置づけ

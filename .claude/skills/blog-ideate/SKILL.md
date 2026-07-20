@@ -1,6 +1,9 @@
 ---
 name: blog-ideate
 description: ブログ記事のコンセプトを対話で発掘する。質問駆動でユーザーの一次体験から記事のネタを引き出し、works/{slug}/idea.md に保存する。引数なしで起動。「ネタ出し」「記事のアイデア」「コンセプトを考えたい」で発動。
+allowed-tools:
+  - Read
+  - Write
 ---
 
 # blog-ideate

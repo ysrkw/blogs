@@ -1,6 +1,12 @@
 ---
 name: blog-review
 description: 記事全体を上からゆっくり通し読みして推敲する。textlint/humanizer の機械チェックと用語ブレ・断定の根拠などの人判断チェックを含め、1ブロックずつ指摘1件だけ提示する。満足するまで何度でも呼べる推敲ループ。引数 {slug} を受け取る。「通し読み」「見直したい」「推敲したい」「もう一周見て」で発動。
+argument-hint: "{slug}"
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Bash(pnpm textlint*)
 ---
 
 # blog-review

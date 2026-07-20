@@ -1,6 +1,10 @@
 ---
 name: blog-publish
 description: 推敲済みの下書きを公開作業として仕上げる。frontmatter確定・参考文献の整形・articles/への移動・コミット案内を行う。引数 {slug} を受け取る。「公開準備」「公開して」で発動。
+argument-hint: "{slug}"
+allowed-tools:
+  - Read
+  - Write
 ---
 
 # blog-publish
