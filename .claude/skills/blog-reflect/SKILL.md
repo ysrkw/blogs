@@ -25,7 +25,7 @@ description: セッションを振り返り、書き手の癖・進め方・シ�
 ## 入力
 
 - 引数: 任意（`{slug}` を渡された場合はそのスラグに紐づくセッションメモを書く）
-- 暗黙の入力: 直近の会話履歴、`docs/` の既存の振り返りメモ（process-notes.md / improvements.md / sessions/）
+- 暗黙の入力: 直近の会話履歴、`docs/` の既存の振り返りメモ（process-notes.md / improvements.md / session-logs/）
 
 ## 進め方
 
@@ -55,7 +55,7 @@ description: セッションを振り返り、書き手の癖・進め方・シ�
 
 - `docs/writing-style.md`: 文体・好む／避ける言い回し・本人の言葉。日付見出しで追記せず、該当テーマの記述へ統合する（定点ドキュメント）
 - `docs/process-notes.md`: 進め方の気づき・詰まったパターン
-- `docs/sessions/{YYYY-MM-DD}-{slug}.md`: そのセッション固有の生メモ（本スキル末尾「テンプレート」をベースに。後で見返す用、整形しすぎない）
+- `docs/session-logs/{YYYY-MM-DD}-{slug}.md`: そのセッション固有の生メモ（本スキル末尾「テンプレート」をベースに。後で見返す用、整形しすぎない）
 
 書き換え案を**全文 diff として提示**し、ユーザー確認を取ってから Write/Edit する。
 
@@ -81,7 +81,7 @@ description: セッションを振り返り、書き手の癖・進め方・シ�
 
 - **ユーザーの言葉を AI 風に書き換えない**。引用は引用のまま残す
 - **記事ファイル（ideas/, drafts/, articles/）には触らない**。振り返りは記事編集ではない
-- **既存ナレッジと矛盾する気づきが出たら、上書きせず経緯を残す**（生の経緯は `docs/sessions/` に、確定したスタイルは `docs/writing-style.md` に反映）
+- **既存ナレッジと矛盾する気づきが出たら、上書きせず経緯を残す**（生の経緯は `docs/session-logs/` に、確定したスタイルは `docs/writing-style.md` に反映）
 - **提案を勝手に適用しない**。improvements.md にログ化するまでが AI の仕事
 - 1 メッセージで質問を畳みかけない（ideate と同じ原則）
 
@@ -89,11 +89,11 @@ description: セッションを振り返り、書き手の癖・進め方・シ�
 
 - 追記: `docs/process-notes.md`, `docs/improvements.md`
 - 統合: `docs/writing-style.md`（確定した文体・癖。テーマへ統合、日付追記しない）
-- 新規: `docs/sessions/{YYYY-MM-DD}-{slug}.md`（slug が無ければ `{YYYY-MM-DD}-session.md`）
+- 新規: `docs/session-logs/{YYYY-MM-DD}-{slug}.md`（slug が無ければ `{YYYY-MM-DD}-session.md`）
 
 ## テンプレート
 
-`docs/sessions/{YYYY-MM-DD}-{slug}.md` の雛形。これをベースに埋める。
+`docs/session-logs/{YYYY-MM-DD}-{slug}.md` の雛形。これをベースに埋める。
 
 ```markdown
 ---
@@ -127,4 +127,4 @@ stage: # ideate | outline | draft | polish | mixed
 
 ## 次のステップ
 
-完了後、ユーザーが次にブログ作業を始める時、AI は最初に `docs/` の振り返りメモ（process-notes.md / improvements.md / sessions/）を読みに行く。運用ルールは docs/writing-policy.md に明記。
+完了後、ユーザーがブログ作業を始める時、AI はまず `docs/` の振り返りメモ（process-notes.md / improvements.md / session-logs/）を読みに行く。運用ルールは docs/writing-policy.md に明記。

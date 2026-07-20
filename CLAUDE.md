@@ -11,7 +11,7 @@
 - [docs/diagrams.md](./docs/diagrams.md): 記事に入れる図（Mermaid）の作り方
 - [docs/improvements.md](./docs/improvements.md): blog システム全体への未適用の改善提案ログ（採用・却下したら削除し git 履歴に委ねる）
 - [docs/markdown.md](./docs/markdown.md): マークダウンの書き方と校正（textlint / markdownlint）の設定・効く経路
-- [docs/process-notes.md](./docs/process-notes.md): 振り返りで効いた進め方・詰まったパターンのログ。セッション単位の生メモは `docs/sessions/` 配下
+- [docs/process-notes.md](./docs/process-notes.md): 振り返りで効いた進め方・詰まったパターンのログ。セッション単位の生メモは `docs/session-logs/` 配下
 - [docs/release.md](./docs/release.md): Qiita への手動公開の手順
 - [docs/skills.md](./docs/skills.md): ローカルスキル（blog-\* / book-log）の索引と外部 humanizer
 - [docs/structure.md](./docs/structure.md): リポジトリの構成（ディレクトリ構造・命名規則）
