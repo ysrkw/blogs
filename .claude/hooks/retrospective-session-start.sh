@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
-# SessionStart hook: セッション開始時に振り返りトリガの状態をリセットする。
+# SessionStart hook: セッション開始時に振り返りトリガの「今セッションで promptを出したか」
+# フラグだけをリセットする。
 #
 # 役割:
-#   - .retrospective-prompted を削除（今セッション「promptを出したか」フラグの初期化）
-#   - .retrospective-session を touch（今セッション開始時刻の基準として保存）
+#   - .retrospective-prompted を削除（今 CLI セッションで prompt 済みかのフラグを初期化）
 #
-# これにより retrospective-trigger.sh は「セッション開始後に対象ファイルが
-# 更新されたか」だけで判定でき、振り返り後の oxfmt 等による mtime 更新で
-# 再発火するループを起こさない。
+# .retrospective-last-prompt（前回 prompt を出した時刻）はここではリセットしない。
+# セッションをまたいで持続させることで、「後で」と答えた直後にセッションを開き直した
+# だけでは再発火しないようにしている（retrospective-trigger.sh 参照）。
 
 set -euo pipefail
 
@@ -17,6 +17,5 @@ REPO_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 cat >/dev/null 2>&1 || true
 
 rm -f "$REPO_ROOT/.claude/.retrospective-prompted"
-touch "$REPO_ROOT/.claude/.retrospective-session"
 
 exit 0

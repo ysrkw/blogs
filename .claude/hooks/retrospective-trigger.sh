@@ -1,19 +1,21 @@
 #!/usr/bin/env bash
 # Stop hook: blog 系ファイルが更新されたセッション終了時に /retrospective を促す。
 #
-# 判定ロジック（セッション単位フラグ方式）:
-#   - .retrospective-prompted があれば「今セッションで既に promptを出した」→ 何もせず終了
-#   - .retrospective-session（SessionStart hook が touch する今セッション開始時刻）
+# 判定ロジック（セッションをまたいで持続する基準点方式）:
+#   - .retrospective-prompted があれば「今 CLI セッションで既に prompt を出した」→ 何もせず終了
+#     （1 ターンごとに Stop が発火するため、同一セッション内での連発を防ぐ）
+#   - .retrospective-last-prompt（前回 prompt を出した時刻。SessionStart ではリセットしない）
 #     より新しい mtime の Markdown が works/ articles/ にあれば prompt
-#   - prompt を出したら .retrospective-prompted を touch して 1 セッション 1 回を保証
+#   - prompt を出したら .retrospective-prompted と .retrospective-last-prompt の両方を touch する
 #
-# この方式により、振り返り完了後の pre-commit oxfmt 等で対象ファイル mtime が
-# 更新されても再発火しない。Claude 側で touch する必要は無い（hook が自律管理）。
+# 基準点を「このセッションの開始時刻」ではなく「前回 prompt を出した時刻」にすることで、
+# 「後で」と答えた後にターミナルを開き直しただけでは再発火しない。前回 prompt 以降に
+# 実質的な新しい編集が無ければ、何度セッションを開き直しても静かなまま。
 
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
-SESSION_FILE="$REPO_ROOT/.claude/.retrospective-session"
+LAST_PROMPT_FILE="$REPO_ROOT/.claude/.retrospective-last-prompt"
 PROMPTED_FILE="$REPO_ROOT/.claude/.retrospective-prompted"
 
 # 読み捨て: payload は使わないが stdin を読まないと hook が固まる環境があるため
@@ -33,22 +35,22 @@ if [ "$have_targets" -eq 0 ]; then
   exit 0
 fi
 
-# SessionStart hook が動いていない（古いセッション等）場合のフォールバック:
-# session ファイルが無ければ今作って、初回は promptしない
-if [ ! -f "$SESSION_FILE" ]; then
-  touch "$SESSION_FILE"
+# 初回導入時のフォールバック: 基準点が無ければ今作って、初回は promptしない
+if [ ! -f "$LAST_PROMPT_FILE" ]; then
+  touch "$LAST_PROMPT_FILE"
   exit 0
 fi
 
-# session 開始後に更新された対象 .md があるか
+# 前回 prompt 以降に更新された対象 .md があるか
 newer=$(find "$REPO_ROOT/works" "$REPO_ROOT/articles" \
-  -type f -name '*.md' -newer "$SESSION_FILE" 2>/dev/null | head -n 1 || true)
+  -type f -name '*.md' -newer "$LAST_PROMPT_FILE" 2>/dev/null | head -n 1 || true)
 if [ -z "$newer" ]; then
   exit 0
 fi
 
-# promptを出すフラグを立てる（次の Stop で再発火しない）
+# promptを出すフラグを立てる（今セッションでの再発火防止 + 次回以降の基準点更新）
 touch "$PROMPTED_FILE"
+touch "$LAST_PROMPT_FILE"
 
 # 振り返りを促す。Stop hook は JSON で {"decision":"block","reason":"..."} を
 # 返すと Claude を継続させられる。

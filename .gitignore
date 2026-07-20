@@ -2,6 +2,5 @@ node_modules/
 .DS_Store
 
 # retrospective の状態フラグ（hook が管理）
-.claude/.retrospective-state
 .claude/.retrospective-prompted
-.claude/.retrospective-session
+.claude/.retrospective-last-prompt
