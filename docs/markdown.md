@@ -20,7 +20,7 @@ Markdown の書き方の規約（人間向け）と、自動チェック（textl
 - `pnpm textlint` / `pnpm textlint:fix`: 手動実行
 - pre-commit hook（lefthook）: ステージした `*.md` を検査
 - Claude Code hook（PostToolUse）: Claude が `*.md` を編集すると textlint が走る。指摘は Claude に差し戻す（`.claude/hooks/textlint-on-edit.sh`）
-- `/blog-review`: 推敲の準備で `pnpm textlint` をかけ、観点別チェックの材料にする
+- `/blog-writing`: 通し読みモードの準備で `pnpm textlint` をかけ、指摘キューの材料にする
 
 humanizer 同様、**丸ごと `--fix` を当てて書き換えない**。指摘を 1 つずつ本人判断で反映し、文体・語りを守るため当てない指摘も選んでよい。運用原則の全体は CLAUDE.md「AI の執筆姿勢」を参照。
 

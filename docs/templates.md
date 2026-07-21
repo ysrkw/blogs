@@ -24,6 +24,27 @@ published_url: # Qiita の公開 URL。公開後に記録
 - `published_url` は publish 後にのみ付く（手順は [release.md](./release.md)）
 - 本文は frontmatter 直後に `# {title}`（`title` と同じ文言の H1）を置いてから書き始める。H1 の下に 1 行空けてリード文を続ける
 
+## review.md（内容の客観チェック記録）
+
+`works/{slug}/review.md` の雛形。`/blog-review` の第4ステップが使う。テンプレート本体は `.claude/skills/blog-review/SKILL.md` を正規とする。
+
+```markdown
+# {slug} レビュー記録
+
+- 実施日: YYYY-MM-DD
+- 今回の観点: <!-- 1. で確認した最優先観点。なければ「一般的な客観チェック」 -->
+
+## 良かった点
+
+-
+
+## 指摘
+
+| 重要度 | 該当箇所 | 指摘 | 対応                    |
+| ------ | -------- | ---- | ----------------------- |
+|        |          |      | 反映 / todo へ / 見送り |
+```
+
 ## 改善提案ログの項目
 
 `docs/improvements.md` に 1 提案を追記するときの雛形。`/retrospective` の第4ステップが使う。

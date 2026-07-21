@@ -2,7 +2,7 @@
 
 公開先は [Qiita の ysrkw アカウント](https://qiita.com/ysrkw)。公開処理は手動で行う。
 
-1. `/blog-review` で推敲を済ませたうえで `/blog-publish` を完了し、`articles/{YYYY-MM-DD}-{slug}.md` を作る
+1. `/blog-writing` の通し読みモードでの推敲、`/blog-review` での客観チェックを済ませる。そのうえで `/blog-publish` を完了し、`articles/{YYYY-MM-DD}-{slug}.md` を作る
    - frontmatter は `status: published`、ファイル名にはこの時点で日付を付与する
 2. Qiita の投稿画面に本文を貼り付けて公開する
    - frontmatter は Qiita に載せない。タイトル・タグは Qiita 側の入力欄で設定する

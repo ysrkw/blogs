@@ -13,6 +13,7 @@
 - [docs/markdown.md](./docs/markdown.md): マークダウンの書き方と校正（textlint / markdownlint）の設定・効く経路
 - [docs/process-notes.md](./docs/process-notes.md): 振り返りで効いた進め方・詰まったパターンのログ。セッション単位の生メモは `docs/session-logs/` 配下
 - [docs/release.md](./docs/release.md): Qiita への手動公開の手順
+- [docs/review-policy.md](./docs/review-policy.md): `/blog-review` が使う内容の客観チェック観点・設計理由・参考文献の正本
 - [docs/skills.md](./docs/skills.md): ローカルスキル（blog-\* / book-log / retrospective）の索引と外部 humanizer
 - [docs/structure.md](./docs/structure.md): リポジトリの構成（ディレクトリ構造・命名規則）
 - [docs/templates.md](./docs/templates.md): テンプレート集（記事 frontmatter スキーマの正規・改善提案ログの項目など。スキルの雛形はここを参照）
