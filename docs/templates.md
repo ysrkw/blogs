@@ -27,7 +27,7 @@ published_url: # Qiita の公開 URL。公開後に記録
 
 ## review.md（内容の客観チェック記録）
 
-`works/{slug}/review.md` の雛形。`/blog-review` の第4ステップが使う。テンプレート本体は `.claude/skills/blog-review/SKILL.md` を正規とする。
+`works/{slug}/review.md` の雛形。`/blog-review` の記録ステップが使う。テンプレート本体は `.claude/skills/blog-review/SKILL.md` を正規とする。
 
 ```markdown
 # {slug} レビュー記録
