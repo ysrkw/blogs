@@ -1,0 +1,47 @@
+{
+  "description": "Claude Code と共通の Markdown 校正・振り返り hooks。",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$(git rev-parse --show-toplevel)/.codex/hooks/textlint-on-edit.sh\"",
+            "timeout": 30,
+            "statusMessage": "textlint で編集内容を確認しています"
+          },
+          {
+            "type": "command",
+            "command": "bash \"$(git rev-parse --show-toplevel)/.codex/hooks/markdownlint-on-edit.sh\"",
+            "timeout": 30,
+            "statusMessage": "markdownlint で編集内容を確認しています"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$(git rev-parse --show-toplevel)/.codex/hooks/retrospective-session-start.sh\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$(git rev-parse --show-toplevel)/.codex/hooks/retrospective-trigger.sh\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -19,7 +19,7 @@ Markdown の書き方の規約（人間向け）と、自動チェック（textl
 
 - `pnpm textlint` / `pnpm textlint:fix`: 手動実行
 - pre-commit hook（lefthook）: ステージした `*.md` を検査
-- Claude Code hook（PostToolUse）: Claude が `*.md` を編集すると textlint が走る。指摘は Claude に差し戻す（`.claude/hooks/textlint-on-edit.sh`）
+- AI 編集 hook（PostToolUse）: Claude Code または Codex が `*.md` を編集すると textlint が走る。各設定は `.claude/settings.json` と `.codex/hooks.json`
 - `/blog-writing`: 通し読みモードの準備で `pnpm textlint` をかけ、指摘キューの材料にする
 
 humanizer 同様、**丸ごと `--fix` を当てて書き換えない**。指摘を 1 つずつ本人判断で反映し、文体・語りを守るため当てない指摘も選んでよい。運用原則の全体は CLAUDE.md「AI の執筆姿勢」を参照。
@@ -32,7 +32,7 @@ Markdown の構文（見出し周りの空行・リストの体裁・末尾空�
 
 - `pnpm markdownlint`: 手動実行。機械的な修正は `pnpm markdownlint:fix`
 - pre-commit hook（lefthook）: ステージした `*.md` を検査
-- Claude Code hook（PostToolUse）: Claude が `*.md` を編集すると markdownlint が走る。指摘は Claude に差し戻す（`.claude/hooks/markdownlint-on-edit.sh`）
+- AI 編集 hook（PostToolUse）: Claude Code または Codex が `*.md` を編集すると markdownlint が走る。各設定は `.claude/settings.json` と `.codex/hooks.json`
 
 主なルール調整（理由は設定ファイルのコメントを参照）。
 
@@ -41,4 +41,6 @@ Markdown の構文（見出し周りの空行・リストの体裁・末尾空�
 - `MD025` は frontmatter の `title` を H1 と数えない。記事は frontmatter title と本文冒頭 H1 を両方持つため
 - `MD028`（引用ブロック間の空行）・`MD029`（順序リストの番号）は無効。振り返りメモ・スキルの書き方に合わせるため
 
-markdownlint の指摘は機械的な構文が中心だが、textlint と揃えて Claude Code hook では丸ごと `--fix` せず差し戻す。機械的にまとめて直したいときは `pnpm markdownlint:fix` を手動で走らせる。
+markdownlint の指摘は機械的な構文が中心だが、textlint と揃えて AI 編集 hook では丸ごと `--fix` せず差し戻す。機械的にまとめて直したいときは `pnpm markdownlint:fix` を手動で走らせる。
+
+Claude Code と Codex の hook スクリプトは、それぞれ `.claude/hooks/` と `.codex/hooks/` に置く。製品ごとの入出力仕様は分け、実行する検査と振り返りの条件を揃える。Codex のプロジェクト用 hooks は信頼済みリポジトリで読み込まれる。初回または定義の変更後は `/hooks` で内容を確認して信頼する。

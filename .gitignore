@@ -4,3 +4,5 @@ node_modules/
 # retrospective の状態フラグ（hook が管理）
 .claude/.retrospective-prompted
 .claude/.retrospective-last-prompt
+.codex/.retrospective-prompted
+.codex/.retrospective-last-prompt
