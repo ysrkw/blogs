@@ -13,7 +13,7 @@ Markdown の書き方の規約（人間向け）と、自動チェック（textl
 
 ### textlint（文章校正）
 
-文章校正は [textlint](https://github.com/textlint/textlint) で機械チェックする。プリセットは 2 つ。AI 臭を検出する [ai-writing プリセット](https://github.com/textlint-ja/textlint-rule-preset-ai-writing) と、日本語の技術文の作法をみる [ja-technical-writing プリセット](https://github.com/textlint-ja/textlint-rule-preset-ja-technical-writing) を使う。設定は `.textlintrc.json`。対象は `node_modules/` を除く全 Markdown（除外は `.textlintignore` で管理）。ルールはほぼ厳格運用。カジュアルな文体と両立しない `ja-no-weak-phrase`（「思います」等）だけ off にし、疑問符 `？` は許可している。
+文章校正は [textlint](https://github.com/textlint/textlint) で機械チェックする。プリセットは 2 つ。AI 臭を検出する [ai-writing プリセット](https://github.com/textlint-ja/textlint-rule-preset-ai-writing) と、日本語の技術文の作法をみる [ja-technical-writing プリセット](https://github.com/textlint-ja/textlint-rule-preset-ja-technical-writing) を使う。設定は `.textlintrc.json`。対象は `node_modules/` を除く全 Markdown。ルールはほぼ厳格運用。カジュアルな文体と両立しない `ja-no-weak-phrase`（「思います」等）だけ off にし、疑問符 `？` は許可している。
 
 次の経路で効く。
 

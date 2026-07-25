@@ -3,7 +3,7 @@
 # 指摘があれば exit 2 で stderr を Claude に差し戻す（= textlint を「聞かせる」）。
 #
 # 方針: humanizer 同様、丸ごと --fix で書き換えない。指摘を 1 つずつ本人判断で反映する。
-# 対象: リポジトリ内の *.md。それ以外は静かに終了（node_modules は .textlintignore 側で除外）。
+# 対象: リポジトリ内の *.md。それ以外は静かに終了。
 
 set -euo pipefail
 
