@@ -11,6 +11,7 @@
 | `docs/`              | ワークフロー・スキル・規約・校正のドキュメント。振り返りメモ（process-notes.md / improvements.md）もここ |
 | `docs/session-logs/` | `/retrospective` のセッション単位の生メモ（`{YYYY-MM-DD}-{slug}.md`）                                    |
 | `docs/books/`        | `/book-log` の読書記録。参考文献・根拠の再利用用。索引は [books.md](./books.md)                          |
+| `docs/sources/`      | `/source-log` の動画・Web記事・論文の記録。索引は [sources.md](./sources.md)                             |
 
 `ideas/` と `drafts/` は別ディレクトリだったが、記事のスラグが決まった時点から公開前まで同じ working ファイル群だった。その実態に合わせて `works/{slug}/` に統合した（2026-07-20）。
 

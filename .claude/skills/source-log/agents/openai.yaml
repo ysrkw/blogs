@@ -1,0 +1,4 @@
+interface:
+  display_name: "Source Log"
+  short_description: "動画・Web記事・論文を記録して記事の出典に再利用する"
+  default_prompt: "$source-log を使って、このオンライン資料を今後の記事で再利用できる形に記録してください。"

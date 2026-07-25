@@ -15,6 +15,7 @@
 - [docs/release.md](./docs/release.md): Qiita への手動公開の手順
 - [docs/review-policy.md](./docs/review-policy.md): `/blog-review` が使う内容の客観チェック観点・設計理由・参考文献の正本
 - [docs/skills.md](./docs/skills.md): ローカルスキル（blog-\* / book-log / retrospective）の索引と外部 humanizer
+- [docs/sources.md](./docs/sources.md): 動画・Web記事・論文の索引と運用ルール（本体は `docs/sources/` 配下）
 - [docs/structure.md](./docs/structure.md): リポジトリの構成（ディレクトリ構造・命名規則）
 - [docs/templates.md](./docs/templates.md): テンプレート集（記事 frontmatter スキーマの正規・改善提案ログの項目など。スキルの雛形はここを参照）
 - [docs/workflow.md](./docs/workflow.md): ワークフローの流れ
