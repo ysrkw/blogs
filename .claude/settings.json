@@ -21,11 +21,27 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd \"$CLAUDE_PROJECT_DIR\" && pnpm textlint"
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && pnpm fmt:check >&2 || exit 2",
+            "timeout": 30,
+            "statusMessage": "oxfmt で編集内容を確認しています"
           },
           {
             "type": "command",
-            "command": "cd \"$CLAUDE_PROJECT_DIR\" && pnpm markdownlint"
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && pnpm lint >&2 || exit 2",
+            "timeout": 30,
+            "statusMessage": "oxlint で編集内容を確認しています"
+          },
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && pnpm textlint >&2 || exit 2",
+            "timeout": 30,
+            "statusMessage": "textlint で編集内容を確認しています"
+          },
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && pnpm markdownlint >&2 || exit 2",
+            "timeout": 30,
+            "statusMessage": "markdownlint で編集内容を確認しています"
           }
         ]
       }

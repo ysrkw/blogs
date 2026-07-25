@@ -7,7 +7,7 @@
     "prepare": "lefthook install",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
-    "lint": "oxlint",
+    "lint": "oxlint --deny-warnings",
     "lint:fix": "oxlint --fix",
     "textlint": "textlint \"**/*.md\"",
     "textlint:fix": "textlint --fix \"**/*.md\"",
