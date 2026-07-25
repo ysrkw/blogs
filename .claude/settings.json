@@ -21,11 +21,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/textlint-on-edit.sh"
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && pnpm textlint"
           },
           {
             "type": "command",
-            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/markdownlint-on-edit.sh"
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && pnpm markdownlint"
           }
         ]
       }
