@@ -30,6 +30,28 @@ flowchart TD
 
 各段階が出力する記事ファイルの frontmatter スキーマは [templates.md](./templates.md) を参照。
 
+## 公開後の更新
+
+`articles/` は現在公開している内容の正本、`works/` は次の改稿を進める作業場とする。公開後の更新は、記事の構成や主張を再検討するかどうかで流れを分ける。
+
+```mermaid
+flowchart TD
+    A["公開済み記事を更新する"] --> B{"構成や主張を<br>再検討するか"}
+    B -->|"しない<br>誤字・リンク・小さな訂正"| C["articles/ を直接修正"]
+    C --> D["updated を更新"]
+    D --> E["Qiita へ反映"]
+    B -->|"する"| F["articles/ の公開版を<br>works/article.md へ取り込む"]
+    F --> G["/blog-writing"]
+    G --> H["/blog-review"]
+    H --> I["/blog-publish"]
+    I --> J["既存の articles/ を更新"]
+    J --> E
+```
+
+どちらの流れでも、`articles/{初回公開日}-{slug}.md` のファイル名は変えない。更新日は frontmatter の `updated` に記録する。内容改稿では `articles/` の公開版から作業を始め、古い `works/{slug}/article.md` をそのまま改稿の起点にしない。
+
+具体的な操作と Qiita への反映手順は [release.md](./release.md) を参照。
+
 ## 振り返り
 
 `/retrospective` は記事の執筆・本の記録どちらの段階の出力でもなく、`blog-*` の命名規則にも属さないシステム側のスキル。特定の段階に紐づく図では表しにくい。`works/`, `articles/` のどちらかが更新されたセッションの終了時、Stop hook が横断的に発火する仕組みだからだ。
