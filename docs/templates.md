@@ -48,7 +48,7 @@ published_url: # Qiita の公開 URL。公開後に記録
 
 ## 改善提案ログの項目
 
-`docs/improvements.md` に 1 提案を追記するときの雛形。`/retrospective` の第4ステップが使う。
+`docs/improvements.md` に 1 提案を追記するときの雛形。`/retrospective` の改善提案ステップが使う。
 
 ```markdown
 ### YYYY-MM-DD: {対象} - 一行要約
