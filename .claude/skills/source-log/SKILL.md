@@ -1,6 +1,12 @@
 ---
 name: source-log
 description: 動画・Web記事・論文など、書籍以外のオンライン資料を一次情報から確認し、docs/sources/{slug}.md と索引 docs/sources.md に記録する。「動画を記録」「Web記事を記録」「論文を記録」「参照元を記録」で発動。
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - WebSearch
+  - WebFetch
 ---
 
 # source-log
