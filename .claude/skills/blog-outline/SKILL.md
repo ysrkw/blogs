@@ -50,6 +50,7 @@ allowed-tools:
    - 本スキル末尾「テンプレート」のコードブロックをベースに埋める
    - 出力先: `works/{slug}/outline.md`（`idea.md` と同じディレクトリ、日付なし）
    - frontmatter の `status: outline` に更新
+   - `created` には `outline.md` を最初に作成した日を入れる。`idea.md` の値は引き継がない
 
 ## 重要原則
 

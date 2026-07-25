@@ -36,7 +36,7 @@ allowed-tools:
    - `title`, `summary`, `tags` を確定
    - `status: published`
    - `updated` を今日に
-   - `created` は ideate 時の日付を維持
+   - `created` は `article.md` を最初に作成した日を維持
    - 参考文献があれば SIST 02 スタイルに整形する。書式は「著者名（姓, 名）. 書名: 副題. 訳者名 訳. 出版者, 刊行年.」。漢字連続が textlint で出たら固有名詞のみ allow 登録・他は言い換え／スペースで対処する
 
 3. 公開（ファイル移動）
