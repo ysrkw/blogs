@@ -22,7 +22,7 @@ Markdown の書き方の規約（人間向け）と、自動チェック（textl
 - AI 編集 hook（PostToolUse）: Claude Code または Codex がファイルを編集すると `pnpm textlint` が走る。各設定は `.claude/settings.json` と `.codex/hooks.json`
 - `/blog-writing`: 通し読みモードの準備で `pnpm textlint` をかけ、指摘キューの材料にする
 
-humanizer 同様、**丸ごと `--fix` を当てて書き換えない**。指摘を 1 つずつ本人判断で反映し、文体・語りを守るため当てない指摘も選んでよい。運用原則の全体は CLAUDE.md「AI の執筆姿勢」を参照。
+humanizer 同様、**丸ごと `--fix` を当てて書き換えない**。意味や語調を変えない機械的な指摘はAIが先に反映してまとめて報告する。語彙やリズムなどに触れる指摘は1つずつ本人判断で反映し、文体・語りを守るため当てない指摘も選んでよい。運用原則の全体は CLAUDE.md「AI の執筆姿勢」を参照。
 
 ### markdownlint（構文チェック）
 
