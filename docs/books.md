@@ -15,7 +15,7 @@
 
 ## 一覧
 
-- [UNIXという考え方](books/unix-philosophy.md) — 最古の SaaS／小さな道具を組み合わせる哲学。使いどころメモあり・記事未使用
+- [UNIXという考え方](books/unix-philosophy.md) — 最古の SaaS／小さな道具を組み合わせる哲学。登場: critical-thinking-with-coding-agents（核）
 - [ハッカーと画家](books/hackers-and-painters.md) — 最古の SaaS の例（Viaweb の Web デプロイ・サポートの速さ）。使いどころメモあり・記事未使用
 - [HIGH OUTPUT MANAGEMENT](books/high-output-management.md) — マネージャーのアウトプット＝チームの総和、レバレッジ。登場: organization-as-software（核）
 - [チームトポロジー](books/team-topologies.md) — 認知負荷を軸にしたチーム設計。登場: organization-as-software（核）
@@ -32,14 +32,14 @@
 - [ドメイン駆動設計入門](books/domain-driven-design-introduction.md) — 値オブジェクトやエンティティなど実装パターンからボトムアップに学ぶ DDD 入門。AI が書くコードの設計を語る軸に。使いどころメモあり・記事未使用
 - [エクストリームプログラミング](books/extreme-programming.md) — XP を価値・原則・プラクティスの 3 層で体系化。プロダクト開発の基礎を振り返りコーディングエージェント時代にどう取り込むか考える軸に。使いどころメモあり・記事未使用
 - [テスト駆動開発](books/test-driven-development.md) — TDD 考案者による入門書。レッド→グリーン→リファクタリングのサイクルを実例で実演。AI のコーディングで TDD のスタイルが有効であることを取り上げる軸に。使いどころメモあり・記事未使用
-- [エリック・エヴァンスのドメイン駆動設計](books/domain-driven-design.md) — DDD の原典。ユビキタス言語・モデル要素・境界づけられたコンテキストまで体系化。AI が書くコードの設計や Claude Code とのドメイン共有を語る軸に。使いどころメモあり・記事未使用
+- [エリック・エヴァンスのドメイン駆動設計](books/domain-driven-design.md) — DDD の原典。ユビキタス言語・モデル要素・境界づけられたコンテキストまで体系化。AI が書くコードの設計や Claude Code とのドメイン共有を語る軸に。登場: critical-thinking-with-coding-agents（核）
 - [Clean Architecture](books/clean-architecture.md) — 変更コストを下げる設計の体系化。SOLID・コンポーネント原則・境界と依存方向の同心円モデル。アーキテクチャの源流の解説や AI とクリーンアーキテクチャの相性を考える軸に。使いどころメモあり・記事未使用
 - [チーム・ジャーニー](books/team-journey.md) — チームを段階を踏んで作る旅として描くストーリー仕立ての本。ジャーニーとフォーメーションで変化に強いチームを語る。チーム開発の話に取り入れる用。使いどころメモあり・記事未使用
-- [プリンシプル オブ プログラミング](books/principles-of-programming.md) — KISS・DRY・YAGNI などプログラミングの原理原則 101 個を体系化したカタログ。AI が原則を守れているか測る軸に。使いどころメモあり・記事未使用
+- [プリンシプル オブ プログラミング](books/principles-of-programming.md) — KISS・DRY・YAGNI などプログラミングの原理原則 101 個を体系化したカタログ。AI が原則を守れているか測る軸に。登場: critical-thinking-with-coding-agents（核）
 - [融けるデザイン](books/tokeru-design.md) — 自己帰属感を軸にハード×ソフト×ネット時代の設計思想を提示。UX・IoT の本質を語る本。キーアイデアへの言及で引く用。使いどころメモあり・記事未使用
 - [Tidy First?](books/tidy-first.md) — コードの整頓を小さな単位で実践し、結合・凝集・経済性で「いつ片付けるか」を判断する設計書。コーディングエージェントの大量生成物をどう片付けるか考える時に。使いどころメモあり・記事未使用
 - [インターネットのカタチ](books/internet-no-katachi.md) — もろい部品が集まって粘り強く動くインターネットの仕組みを障害事例から解説。インターネットの分散的な話をする時に。使いどころメモあり・記事未使用
-- [リーダブルコード](books/the-art-of-readable-code.md) — 読みやすさ最優先で命名・コメント・制御フローから具体的に改善する実践書。良いコードを言語化する時の参考文献に。使いどころメモあり・記事未使用
+- [リーダブルコード](books/the-art-of-readable-code.md) — 読みやすさ最優先で命名・コメント・制御フローから具体的に改善する実践書。良いコードを言語化する時の参考文献に。登場: critical-thinking-with-coding-agents（核）
 - [コーディングを支える技術](books/coding-wo-sasaeru-gijutsu.md) — 言語機能が今の形になった理由を成り立ちから複数の言語を比べて解説。プログラミングの歴史を語る時の参考に。使いどころメモあり・記事未使用
-- [モノリスからマイクロサービスへ](books/monolith-to-microservices.md) — モノリスを段階的に分解・移行する実践ガイド。マイクロサービスは手段という立場。アンチパターンや目的と手段の逆転を語る時に。使いどころメモあり・記事未使用
+- [モノリスからマイクロサービスへ](books/monolith-to-microservices.md) — モノリスを段階的に分解・移行する実践ガイド。マイクロサービスは手段という立場。アンチパターンや目的と手段の逆転を語る時に。登場: critical-thinking-with-coding-agents（核）
 - [ワイズカンパニー](books/wise-company.md) — 知識創造（SECI）に実践知（フロネシス）を加えた続編。あとがきのイノベーション3段階（機械が1から9をリード）を、AI 時代に人間が集中すべき領域の話に。使いどころメモあり・記事未使用
