@@ -28,7 +28,7 @@ summary: コーディングエージェントで作る速さが上がった今�
 
 [「開発生産性」ではなく、事業の投資対効果に向き合う「事業生産性」へ - Findy Tools](https://findy-tools.io/articles/onecareer-dev-productivity-con-2025/115)
 
-開発生産性を事業インパクトと結びつける流れは、ほかにも広がっています。
+開発生産性を事業インパクトと結びつける考え方は、ほかの記事でも紹介されています。
 
 [開発チームの生産性を「事業インパクト」と結びつける新しい視点 - IT COMPASS](https://itcompass.lanitech.jp/blog/developer-productivity-business-impact/)
 
