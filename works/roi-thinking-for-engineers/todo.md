@@ -8,4 +8,4 @@ draft 中に出た補強候補。本文に即書かず、ベースが固まっ�
 
 - Four Keys の出典リンクを付けるか（DORA の公式サイトか Google Cloud のブログが候補）
 - frontmatter の summary が空のまま
-- 参考文献に『シンプリシティ』を入れた。公開時に docs/books.md の該当行と docs/books/simplicity.md の「登場記事」を更新する
+- 参考文献に『シンプリシティ』（核）、『HIGH OUTPUT MANAGEMENT』『EMPOWERED』（参考文献）を入れた。公開時に docs/books.md の該当行と docs/books/ 配下の「登場記事」を更新する
