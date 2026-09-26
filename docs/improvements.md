@@ -16,6 +16,20 @@ blog システム全体への改善提案ログ。対象はスキル（blog-\*�
 
 1 項目の書き方は [templates.md](./templates.md)「改善提案ログの項目」を参照。
 
+### 2026-09-26: blog-outline - 寝かせた idea は経過期間の一次体験を先に聞く
+
+- 対象: `.claude/skills/blog-outline/SKILL.md`（1. コンセプトの再確認）
+- 背景: roi-thinking-for-engineers は idea から4か月あけて outline に入った。寝かせている間の体験を聞くと4件が加わり、軸が3回動いた。今回は AI が process-notes の「レビューの穴」の知見から自発的に聞いたが、手順には書かれていない
+- 変更案: 1. に「idea.md の `created` から時間があいている場合は、その間に起きた一次体験と構想の変化を聞く。軸が動いたら outline 内で再定義する」を足す。再定義のたびにコンセプトを言い直して確認する
+- 期待される効果: 寝かせた記事ほど増える新しい体験を、draft や review より前に取り込める
+
+### 2026-09-26: blog-outline - テンプレートに参照先の節を足す
+
+- 対象: `.claude/skills/blog-outline/SKILL.md`（テンプレート）
+- 背景: outline で出典を2件確認し、中心語の定義の出典と流れの補強に役割を分けた。テンプレートに置き場がなく、「参照先」の節を独自に足した
+- 変更案: テンプレートの「まとめで伝えたいこと」の後に「参照先」節を足す。各出典に、確認した要旨と記事での役割（定義／補強など）を1行ずつ書く
+- 期待される効果: draft で出典を探し直さずに済む。中心語が出典に実際に出てくるかの確認も、outline の段階で済ませられる
+
 ### 2026-07-28: docs/templates.md - 回を重ねる記録ファイルの見出し規約を一般化する
 
 - 対象: `docs/templates.md`、`.claude/skills/retrospective/SKILL.md`（session-logs の雛形）
