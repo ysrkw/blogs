@@ -9,5 +9,5 @@
   - 出版: 日本能率協会マネジメントセンター、2021 年 7 月
   - ISBN: 978-4-820-72924-2（4820729241）
   - 一次情報: [版元ドットコム](https://www.hanmoto.com/bd/isbn/9784820729242)
-- 記事で引いた対応: （本文未使用、参考文献のみ）ストリームアラインド+権限委譲の文脈
-- 登場記事: organization-as-software（参考文献）
+- 記事で引いた対応: organization-as-software では本文未使用（参考文献のみ）、ストリームアラインド+権限委譲の文脈。business-productivity-cost-reduction ではディスカバリーとデリバリーの区別 ↔ エージェントが浮かせた時間にエンジニアもディスカバリーを手伝う
+- 登場記事: organization-as-software（参考文献）, business-productivity-cost-reduction（核）

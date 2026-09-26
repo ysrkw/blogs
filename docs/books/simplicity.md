@@ -11,5 +11,5 @@
   - ISBN: 978-4-8144-0171-0（481440171X）
   - 体裁: 188 ページ
   - 一次情報: [O'Reilly Japan](https://www.oreilly.co.jp/books/9784814401710/)
-- 記事で引いた対応: （未使用）
-- 登場記事: （なし）
+- 記事で引いた対応: business-productivity-cost-reduction で「方向を見定め、一歩進み、学ぶ（Orient, Step, Learn）」を引いた。実態を調べ小さく一歩進み結果から学ぶ進め方に対応する。本文で言葉を先に使い、まとめで出どころを明かした
+- 登場記事: business-productivity-cost-reduction（核）

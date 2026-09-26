@@ -7,3 +7,4 @@ AI 時代の開発に関するブログ記事を、AI とブレストしなが�
 これまでに公開した記事。新しいものを下に並べる。
 
 - [組織とマネジメントとソフトウェアアーキテクチャ](./articles/2026-06-23-organization-as-software.md)（2026-06-23）
+- [事業生産性をエンジニアリングする（費用削減編）](./articles/2026-09-27-business-productivity-cost-reduction.md)（2026-09-27）

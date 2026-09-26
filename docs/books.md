@@ -17,9 +17,9 @@
 
 - [UNIXという考え方](books/unix-philosophy.md) — 最古の SaaS／小さな道具を組み合わせる哲学。登場: critical-thinking-with-coding-agents（核）
 - [ハッカーと画家](books/hackers-and-painters.md) — 最古の SaaS の例（Viaweb の Web デプロイ・サポートの速さ）。使いどころメモあり・記事未使用
-- [HIGH OUTPUT MANAGEMENT](books/high-output-management.md) — マネージャーのアウトプット＝チームの総和、レバレッジ。登場: organization-as-software（核）
-- [チームトポロジー](books/team-topologies.md) — 認知負荷を軸にしたチーム設計。登場: organization-as-software（核）
-- [EMPOWERED](books/empowered.md) — 権限を持つプロダクトチーム。登場: organization-as-software（参考文献）
+- [HIGH OUTPUT MANAGEMENT](books/high-output-management.md) — マネージャーのアウトプット＝チームの総和、レバレッジ。登場: organization-as-software（核）, business-productivity-cost-reduction（核）
+- [チームトポロジー](books/team-topologies.md) — 認知負荷を軸にしたチーム設計。登場: organization-as-software（核）, business-productivity-cost-reduction（核）
+- [EMPOWERED](books/empowered.md) — 権限を持つプロダクトチーム。登場: organization-as-software（参考文献）, business-productivity-cost-reduction（核）
 - [エンジニアリングマネジャー入門](books/engineering-management-for-the-rest-of-us.md) — エンジニア出身者向けの EM 入門。登場: organization-as-software（参考文献）
 - [ビジョナリー・カンパニー2](books/good-to-great.md) — good から great への飛躍の法則。第 5 水準のリーダーは目的と意思決定を備えた普通の人。使いどころメモあり・記事未使用
 - [SCRUM BOOT CAMP THE BOOK【増補改訂版】](books/scrum-boot-camp.md) — スクラム入門。チームが話し合って製品を良くする努力。使いどころメモあり・記事未使用
@@ -38,7 +38,7 @@
 - [プリンシプル オブ プログラミング](books/principles-of-programming.md) — KISS・DRY・YAGNI などプログラミングの原理原則 101 個を体系化したカタログ。AI が原則を守れているか測る軸に。登場: critical-thinking-with-coding-agents（核）
 - [融けるデザイン](books/tokeru-design.md) — 自己帰属感を軸にハード×ソフト×ネット時代の設計思想を提示。UX・IoT の本質を語る本。キーアイデアへの言及で引く用。使いどころメモあり・記事未使用
 - [Tidy First?](books/tidy-first.md) — コードの整頓を小さな単位で実践し、結合・凝集・経済性で「いつ片付けるか」を判断する設計書。コーディングエージェントの大量生成物をどう片付けるか考える時に。使いどころメモあり・記事未使用
-- [シンプリシティ](books/simplicity.md) — 不要な複雑さを見極め、開発プロセス・コード・働き方をシンプルにする。弁証法的な思考（対立する両方の意見から第3の案を作る）を記事に込める用。使いどころメモあり・記事未使用
+- [シンプリシティ](books/simplicity.md) — 不要な複雑さを見極め、開発プロセス・コード・働き方をシンプルにする。弁証法的な思考（対立する両方の意見から第3の案を作る）を記事に込める用。登場: business-productivity-cost-reduction（核）
 - [インターネットのカタチ](books/internet-no-katachi.md) — もろい部品が集まって粘り強く動くインターネットの仕組みを障害事例から解説。インターネットの分散的な話をする時に。使いどころメモあり・記事未使用
 - [リーダブルコード](books/the-art-of-readable-code.md) — 読みやすさ最優先で命名・コメント・制御フローから具体的に改善する実践書。良いコードを言語化する時の参考文献に。登場: critical-thinking-with-coding-agents（核）
 - [コーディングを支える技術](books/coding-wo-sasaeru-gijutsu.md) — 言語機能が今の形になった理由を成り立ちから複数の言語を比べて解説。プログラミングの歴史を語る時の参考に。使いどころメモあり・記事未使用

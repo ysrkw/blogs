@@ -9,5 +9,5 @@
   - 出版: 日経BP社、2017 年 1 月
   - ISBN: 978-4-822-25501-5（4822255018）
   - 一次情報: [日経BOOKプラス](https://bookplus.nikkei.com/atcl/catalog/17/P55010/)
-- 記事で引いた対応: マネージャーのアウトプット ↔ チームのアウトプット（合成関数）、レバレッジ ↔ 再利用性・抽象化
-- 登場記事: organization-as-software（核）
+- 記事で引いた対応: マネージャーのアウトプット ↔ チームのアウトプット（合成関数）、レバレッジ ↔ 再利用性・抽象化。business-productivity-cost-reduction ではレバレッジ ↔ 全員が毎日通る場所（ビルド・フォーマット検証・テスト）の改善
+- 登場記事: organization-as-software（核）, business-productivity-cost-reduction（核）

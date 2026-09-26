@@ -9,5 +9,5 @@
   - 出版: 日本能率協会マネジメントセンター、2021 年 12 月
   - ISBN: 978-4-820-72963-1（4820729632）
   - 一次情報: [JMAM 書誌ページ](https://pub.jmam.co.jp/book/b597472.html)
-- 記事で引いた対応: ディスカバリー+デリバリー → ストリームアラインド+プラットフォームへの再分割、認知負荷、モジュール再分割
-- 登場記事: organization-as-software（核）
+- 記事で引いた対応: ディスカバリー+デリバリー → ストリームアラインド+プラットフォームへの再分割、認知負荷、モジュール再分割。business-productivity-cost-reduction ではリードでプラットフォームチームの用語として引いた
+- 登場記事: organization-as-software（核）, business-productivity-cost-reduction（核）
