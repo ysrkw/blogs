@@ -96,7 +96,7 @@ allowed-tools:
 
 - 追記: `docs/process-notes.md`, `docs/improvements.md`
 - 統合: `docs/writing-style.md`（確定した文体・癖。テーマへ統合、日付追記しない）
-- 新規: `docs/session-logs/{YYYY-MM-DD}-{slug}.md`（slug が無ければ `{YYYY-MM-DD}-session.md`）
+- 新規: `docs/session-logs/{YYYY-MM-DD}-{slug}.md`（slug が無ければ `{YYYY-MM-DD}-session.md`）。同じ日・同じ slug の2回目は末尾に `-2` を付ける（docs/templates.md「回を重ねる記録ファイルの見出し規約」）
 
 ## テンプレート
 

@@ -9,7 +9,7 @@
 | `works/{slug}/`      | `/blog-ideate`〜`/blog-review` の作業場（idea.md, outline.md, article.md, review.md）。日付なし          |
 | `articles/`          | 公開済み記事。ここでだけ `YYYY-MM-DD-{slug}.md` の形式で日付を付ける                                     |
 | `docs/`              | ワークフロー・スキル・規約・校正のドキュメント。振り返りメモ（process-notes.md / improvements.md）もここ |
-| `docs/session-logs/` | `/retrospective` のセッション単位の生メモ（`{YYYY-MM-DD}-{slug}.md`）                                    |
+| `docs/session-logs/` | `/retrospective` のセッション単位の生メモ（`{YYYY-MM-DD}-{slug}.md`。同日2回目は `-2`）                  |
 | `docs/books/`        | `/book-log` の読書記録。参考文献・根拠の再利用用。索引は [books.md](./books.md)                          |
 | `docs/sources/`      | `/source-log` の動画・Web記事・論文の記録。索引は [sources.md](./sources.md)                             |
 
