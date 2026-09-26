@@ -1,9 +1,5 @@
 # todo: business-productivity-cost-reduction
 
-## 公開時
-
-- 本文に足した DORA 2025 の発表記事（Google Cloud Blog）を `/source-log` で docs/sources/ に記録する
-
 ## 次の記事のネタ
 
 - 機能の複雑さと更新のしにくさ。今も向き合っている途中なので、解消の目処が立ったら別記事で書く。本記事「使われない機能がコストを生み続ける」の複雑さの段落は一般論として残している

@@ -9,5 +9,6 @@
   - 掲載元: DORA (dora.dev)
   - 公開日: 2025-09-24
   - URL: [DORA](https://dora.dev/research/2025/dora-report/)
-- 記事で引いた対応: 「使い分けの判断は、探究心で鍛える」節。「増幅されるのは、自分の中に圧縮して蓄えてきたものだから」という主張の直後に、組織の強みと弱みを増幅するというレポートの知見を置き、個人への適用は自分の見立てとして書き分けた
-- 登場記事: works/critical-thinking-with-coding-agents（批判的思考でエージェントの成果物に向き合う）
+  - 発表記事: [Announcing the 2025 DORA Report - Google Cloud Blog](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report)。Nathen Harvey、Derek DeBellis 著、2025-09-24
+- 記事で引いた対応: 「使い分けの判断は、探究心で鍛える」節。「増幅されるのは、自分の中に圧縮して蓄えてきたものだから」という主張の直後に、組織の強みと弱みを増幅するというレポートの知見を置き、個人への適用は自分の見立てとして書き分けた。business-productivity-cost-reduction では「開発生産性から事業生産性へ」の節で、AI の導入が安定性の低下と結びつくという報告を引いた。速さの数値だけでは足りない根拠にしている。リンクは発表記事に張った
+- 登場記事: critical-thinking-with-coding-agents、business-productivity-cost-reduction
