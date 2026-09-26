@@ -123,6 +123,7 @@ allowed-tools:
    - textlint の残指摘があれば件数を伝える
    - 参考文献の入れ替えがあれば、`docs/books.md` の該当行を公開時に更新する旨を todo.md へ残す（索引の更新自体は `/blog-publish` の手順で行う）
    - まだ気になる点が残っていそうなら、`/blog-writing {slug}` をもう一周呼んでよいと伝える
+   - 章の統合や段落の削除を伴った回は、削った箇所に根拠が含まれていなかったかを `/blog-review {slug}` で確かめるよう勧める
    - 残っていなければ、続けて `/blog-review {slug}`（内容の客観チェック）を今このまま実行するか本人に確認する。Yes ならそのまま `.claude/skills/blog-review/SKILL.md` の進め方に移る。No や保留なら締めで終える
 
 ### 通し読みモードの重要原則

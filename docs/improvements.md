@@ -23,13 +23,6 @@ blog システム全体への改善提案ログ。対象はスキル（blog-\*�
 - 変更案: 回を重ねて追記する記録（review.md・振り返りメモ）の見出し規約を、templates.md に1節として立てる。review.md と session-logs の雛形からはそこを参照させる。session-logs は1セッション1ファイルのままとし、同日2回目のファイル名規則（`-2` など）を明記する
 - 期待される効果: 次に別の記録ファイルを足すときも同じ罠を踏まない。lint を緩める判断が再発しない
 
-### 2026-07-28: blog-writing / blog-review - 圧縮を伴う推敲のあとは内容の再レビューを促す
-
-- 対象: `.claude/skills/blog-writing/SKILL.md`（通し読みの締め）、`.claude/skills/blog-review/SKILL.md`（レビューの目的確認）
-- 背景: critical-thinking-with-coding-agents を 14 章から 11 見出しへ圧縮した。直後に review を回すと、圧縮によって根拠の消えた箇所を3件見つけた。いずれも本人が OK を出した削除である。本人言「文章量が多かったのでとりあえず減らしたい感じで OK してた部分があった」「レビュー後のものもレビューし直すべき」。現行の blog-writing の締めには再レビューへの導線がない
-- 変更案: blog-writing の締めに「章の統合や段落の削除を伴った回は、`/blog-review` を回して圧縮による情報の欠落を確認する」を足す。blog-review の目的確認では、選択肢に「圧縮で情報が落ちていないか」を明示的に並べる
-- 期待される効果: 削りすぎの検知が運用に組み込まれる。今回は本人の指示で回したが、次回以降は手順として残る
-
 ### 2026-07-28: docs/writing-style.md - 禁則チェックをスクリプト化する
 
 - 対象: `package.json`、`docs/writing-style.md`（禁則の表）、`.claude/skills/blog-writing/SKILL.md`（通し読みの準備）
