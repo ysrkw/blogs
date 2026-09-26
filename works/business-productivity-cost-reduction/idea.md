@@ -1,6 +1,6 @@
 ---
 title:
-slug: roi-thinking-for-engineers
+slug: business-productivity-cost-reduction
 status: idea
 created: 2026-05-26
 updated: 2026-05-26

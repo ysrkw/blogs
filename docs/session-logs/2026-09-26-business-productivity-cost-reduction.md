@@ -1,10 +1,10 @@
 ---
 date: 2026-09-26
-slug: roi-thinking-for-engineers
+slug: business-productivity-cost-reduction
 stage: outline
 ---
 
-# 2026-09-26 roi-thinking-for-engineers
+# 2026-09-26 business-productivity-cost-reduction
 
 ## このセッションでやったこと
 

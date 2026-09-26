@@ -1,6 +1,6 @@
 ---
 title: 事業生産性をエンジニアリングする
-slug: roi-thinking-for-engineers
+slug: business-productivity-cost-reduction
 status: outline
 created: 2026-09-26
 updated: 2026-09-26

@@ -1,15 +1,15 @@
 ---
 date: 2026-05-26
-slug: roi-thinking-for-engineers
+slug: business-productivity-cost-reduction
 stage: ideate
 ---
 
-# 2026-05-26 roi-thinking-for-engineers セッション
+# 2026-05-26 business-productivity-cost-reduction セッション
 
 ## 何をしたか
 
 - ideate 段階を実施
-- `ideas/roi-thinking-for-engineers.md` を新規作成
+- `ideas/business-productivity-cost-reduction.md` を新規作成
 - 振り返り中に Stop hook 3 連発の設計問題が発覚、skill-improvements.md に proposed として記録
 
 ## 進行の流れ
@@ -20,7 +20,7 @@ stage: ideate
 - 核となる実例：引き継ぎクーポンシステム（運用赤字＋障害＋経緯報告書 → 廃止）が出てきた
 - 読者像：これから ROI を意識する若手〜中堅エンジニア
 - 独自角度：「エンジニアリングを組織全体へ広げる課題に、実際に取り組んでいるから」（その場で言語化）
-- スラグ確定：`roi-thinking-for-engineers`
+- スラグ確定：`business-productivity-cost-reduction`
 
 ## 印象的な本人発言（そのまま）
 
@@ -47,5 +47,5 @@ stage: ideate
 
 ## 次のステップ
 
-- ユーザーが `/blog-outline roi-thinking-for-engineers` で構成段階へ
+- ユーザーが `/blog-outline business-productivity-cost-reduction` で構成段階へ
 - skill-improvements.md の proposed 2 件（blog-ideate 事前準備の確認、blog-reflect hook タイミング）はユーザー判断で applied 化
