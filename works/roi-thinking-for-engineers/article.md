@@ -26,6 +26,10 @@ summary: コーディングエージェントで作る速さが上がった今�
 
 [「開発生産性」ではなく、事業の投資対効果に向き合う「事業生産性」へ - Findy Tools](https://findy-tools.io/articles/onecareer-dev-productivity-con-2025/115)
 
+開発生産性を事業インパクトと結びつける流れは、ほかにも広がっています。
+
+[開発チームの生産性を「事業インパクト」と結びつける新しい視点 - IT COMPASS](https://itcompass.lanitech.jp/blog/developer-productivity-business-impact/)
+
 この記事では、そのうち売上増加と費用削減の2つを扱います。
 
 投資対効果は、費用対効果と混同されやすい言葉です。
@@ -34,10 +38,6 @@ summary: コーディングエージェントで作る速さが上がった今�
 - 投資対効果: 投じたお金に対して、どれだけ利益が戻ってきたかを見る
 
 機能を作る判断は費用対効果で語られがちです。事業生産性では、利益として戻ってくるかまで見ます。ここで言う費用には、開発するエンジニアの人件費も含まれます。
-
-開発生産性を事業インパクトと結びつける流れは、ほかにも広がっています。
-
-[開発チームの生産性を「事業インパクト」と結びつける新しい視点 - IT COMPASS](https://itcompass.lanitech.jp/blog/developer-productivity-business-impact/)
 
 ## 足した機能が次の開発を重くする
 
