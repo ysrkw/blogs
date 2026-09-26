@@ -3,7 +3,6 @@
 ## 公開時
 
 - 本文に足した DORA 2025 の発表記事（Google Cloud Blog）を `/source-log` で docs/sources/ に記録する
-- Qiita で公開したら、公開 URL を frontmatter の `published_url` に記録し、README の記事一覧に1行足す
 
 ## 次の記事のネタ
 
