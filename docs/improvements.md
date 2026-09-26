@@ -50,3 +50,10 @@ blog システム全体への改善提案ログ。対象はスキル（blog-\*�
 - 背景: business-productivity-cost-reduction で、プラットフォームチームという立場と BtoB という前提が review まで本文になかった。本人言「忘れてた」「立場や前提を先に書いておく」
 - 変更案: リード方針の確認に「書き手の立場（所属チームの役割・プロダクトの種類など）をリードで示すか」を1項目足し、outline.md のリード方針欄にも記入欄を置く
 - 期待される効果: 読者が事例の重みを判断できる前提が、draft の最初から入る
+
+### 2026-09-27: blog-writing の SKILL.md - 通し読みで文を削る前に review.md を確かめる
+
+- 対象: `.claude/skills/blog-writing/SKILL.md` の通し読みモード 2.(d)
+- 背景: business-productivity-cost-reduction の通し読みで、「文が多い」と削ったまとめの1文が、前回 review の指摘への答えだった。AI は review.md を見ずに削除へ同意し、次の review で同じ指摘が戻った
+- 変更案: (d) に「文や段落を削る合意の前に works/{slug}/review.md を確かめ、その文が過去の指摘への答えなら『前回の〇〇という指摘への答えです』と一言添える」を足す
+- 期待される効果: 削る判断に根拠の出どころが見え、review で同じ指摘を往復しなくて済む
