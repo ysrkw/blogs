@@ -16,13 +16,6 @@ blog システム全体への改善提案ログ。対象はスキル（blog-\*�
 
 1 項目の書き方は [templates.md](./templates.md)「改善提案ログの項目」を参照。
 
-### 2026-09-26: blog-outline - 寝かせた idea は経過期間の一次体験を先に聞く
-
-- 対象: `.claude/skills/blog-outline/SKILL.md`（1. コンセプトの再確認）
-- 背景: roi-thinking-for-engineers は idea から4か月あけて outline に入った。寝かせている間の体験を聞くと4件が加わり、軸が3回動いた。今回は AI が process-notes の「レビューの穴」の知見から自発的に聞いたが、手順には書かれていない
-- 変更案: 1. に「idea.md の `created` から時間があいている場合は、その間に起きた一次体験と構想の変化を聞く。軸が動いたら outline 内で再定義する」を足す。再定義のたびにコンセプトを言い直して確認する
-- 期待される効果: 寝かせた記事ほど増える新しい体験を、draft や review より前に取り込める
-
 ### 2026-09-26: blog-outline - テンプレートに参照先の節を足す
 
 - 対象: `.claude/skills/blog-outline/SKILL.md`（テンプレート）
