@@ -30,7 +30,7 @@ summary: コーディングエージェントで作る速さが上がった今�
 
 [開発チームの生産性を「事業インパクト」と結びつける新しい視点 - IT COMPASS](https://itcompass.lanitech.jp/blog/developer-productivity-business-impact/)
 
-この記事では、そのうち売上増加と費用削減の2つを扱います。
+この記事では、事業生産性の3つの観点のうち、売上増加と費用削減の2つを扱います。
 
 投資対効果は、費用対効果と混同されやすい言葉です。
 
