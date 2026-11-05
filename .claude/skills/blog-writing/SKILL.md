@@ -6,7 +6,7 @@ allowed-tools:
   - Read
   - Write
   - Edit
-  - Bash(pnpm textlint*)
+  - Bash(npm run textlint*)
 ---
 
 # blog-writing
@@ -89,7 +89,7 @@ allowed-tools:
 セクション単位の往復では見えない、記事全体の流れのつながりを確認する。**指摘・質問は 1 回のメッセージにつき 1 件だけ**。draft と publish の間にある「繰り返し磨く」工程で、`/blog-writing {slug}` を納得いくまで何度でも呼び直す運用を前提にしている。
 
 1. 準備（1 メッセージ）
-   - `pnpm textlint`（対象は `works/` `articles/`）を実行し、指摘を一覧で取得する。冗長表現・一文の長さ・助詞の連続・ら抜き・AI 臭（ai-writing プリセット）を機械的に拾う
+   - `npm run textlint`（対象は `works/` `articles/`）を実行し、指摘を一覧で取得する。冗長表現・一文の長さ・助詞の連続・ら抜き・AI 臭（ai-writing プリセット）を機械的に拾う
    - 続けて `docs/writing-style.md` の「禁則」の表を全項目確認する。見出しの句読点・段落末の後置きの念押し・読点の引き伸ばし・太字・ダッシュ・「効く」・but 構文の 7 項目で、確認方法（grep 等）は表に書いてある
    - さらに humanizer の観点で、禁則表と textlint のどちらにも載っていない AI 臭（三点強調・アフォリズム化）を洗い出す
    - ルールは既定のまま厳格運用（カジュアル文体でも `ja-no-weak-phrase` 等を残している）。運用原則（丸ごと `--fix` / 全文リライトを当てない、文体デフォルト優先）は docs/writing-policy.md「AI の執筆姿勢」を参照

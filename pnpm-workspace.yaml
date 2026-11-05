@@ -1,4 +1,0 @@
-allowBuilds:
-  lefthook: true
-onlyBuiltDependencies:
-  - lefthook

@@ -1,18 +1,18 @@
 commit-msg:
   commands:
     commitlint:
-      run: pnpm exec commitlint --edit {1}
+      run: npm run commitlint -- --edit {1}
 
 pre-commit:
   parallel: true
   commands:
     oxfmt:
-      run: pnpm exec oxfmt --check
+      run: npm run fmt:check
     oxlint:
-      run: pnpm lint
+      run: npm run lint
     textlint:
       glob: "**/*.md"
-      run: pnpm exec textlint {staged_files}
+      run: npm run textlint:files -- {staged_files}
     markdownlint:
       glob: "**/*.md"
-      run: pnpm exec markdownlint-cli2 {staged_files}
+      run: npm run markdownlint:files -- {staged_files}

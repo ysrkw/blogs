@@ -73,7 +73,7 @@ critical-thinking-with-coding-agents で見出し「論理的思考は線路を�
 - **テンプレの違反は生成物に伝播する**。blog-ideate のテンプレの `想定読了時間` が ja-technical-writing に引っかかり、過去の全 ideas に伝播していた（`読了時間の目安` に直して根を断った）。テンプレは各 SKILL.md 末尾のコードブロックに同梱されており textlint の自動対象外なので、新ルール導入時は手動で（または最初の生成物で）通す
 - **lefthook の glob はトップ直下の flat ファイルを拾わない**。`{ideas,drafts,articles}/**/*.md` という設定は `ideas/{slug}.md`（ネストなし）を取りこぼす。末尾を `/**.md`（gobwas のスーパースター）に変えると flat と nested を両方カバーする（実測確認済み）
 - **引用ブロック（`>`）と箇条書き（`-`）で textlint の効きが違う**。`>` は ja-technical-writing の prose ルールが効かず、`-` にすると効く。古い記事のスタイル統一で `>`→`-` に変えると、lint されていなかった生文（助詞連続・一文長）がまとめて顕在化する。`>` を lint 逃れに使わない（生メモでも校正する方針）
-- **pre-commit の oxfmt は gitignored ファイルも検査する**。lefthook の `oxfmt --check` は staged 限定でなく全ファイルを対象にする。そのため gitignore 済みの `.claude/settings.local.json` の整形崩れでもコミットが止まる。中身を変えず `pnpm exec oxfmt <file>` で整形だけ直せば、他チェックを通したまま正規にコミットできる。--no-verify で全チェックを飛ばさない（2026-06-23）
+- **pre-commit の oxfmt は gitignored ファイルも検査する**。lefthook の `oxfmt --check` は staged 限定でなく全ファイルを対象にする。そのため gitignore 済みの `.claude/settings.local.json` の整形崩れでもコミットが止まる。中身を変えず `npm run fmt -- <file>` で整形だけ直せば、他チェックを通したまま正規にコミットできる。--no-verify で全チェックを飛ばさない（2026-06-23）
 - **no-doubled-joshi は複合語に含まれる助詞も数える**。たとえば『ように』の語中の助詞も対象。同じ助詞が一文に2回出ると違反するが、読点を挟めばリセットされる。max-ten は一文の読点4つで発火。draft 中は都度言い換えて通した（2026-06-23、この知見メモ自体も「に」2回で弾かれた）
 
 ## 出典・参照の選び方（2026-07-12）

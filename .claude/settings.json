@@ -15,11 +15,10 @@
       "Bash(git commit*)",
       "Bash(git mv*)",
       "Bash(git rm*)",
-      "Bash(pnpm fmt*)",
-      "Bash(pnpm lint*)",
-      "Bash(pnpm textlint*)",
-      "Bash(pnpm markdownlint*)",
-      "Bash(pnpm exec oxfmt*)"
+      "Bash(npm run fmt*)",
+      "Bash(npm run lint*)",
+      "Bash(npm run textlint*)",
+      "Bash(npm run markdownlint*)"
     ]
   },
   "hooks": {
@@ -29,25 +28,25 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd \"$CLAUDE_PROJECT_DIR\" && pnpm fmt:check >&2 || exit 2",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && npm run fmt:check >&2 || exit 2",
             "timeout": 30,
             "statusMessage": "oxfmt で編集内容を確認しています"
           },
           {
             "type": "command",
-            "command": "cd \"$CLAUDE_PROJECT_DIR\" && pnpm lint >&2 || exit 2",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && npm run lint >&2 || exit 2",
             "timeout": 30,
             "statusMessage": "oxlint で編集内容を確認しています"
           },
           {
             "type": "command",
-            "command": "cd \"$CLAUDE_PROJECT_DIR\" && pnpm textlint >&2 || exit 2",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && npm run textlint >&2 || exit 2",
             "timeout": 30,
             "statusMessage": "textlint で編集内容を確認しています"
           },
           {
             "type": "command",
-            "command": "cd \"$CLAUDE_PROJECT_DIR\" && pnpm markdownlint >&2 || exit 2",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && npm run markdownlint >&2 || exit 2",
             "timeout": 30,
             "statusMessage": "markdownlint で編集内容を確認しています"
           }
