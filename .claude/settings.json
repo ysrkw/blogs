@@ -4,14 +4,22 @@
     "allow": [
       "Edit",
       "Write",
-      "NotebookEdit",
       "WebFetch",
       "WebSearch",
-      "Skill(update-config)",
       "Skill(retrospective)",
-      "Bash(git *)",
-      "Bash(pnpm run *)",
-      "Bash(pnpm exec *)"
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git show*)",
+      "Bash(git add*)",
+      "Bash(git commit*)",
+      "Bash(git mv*)",
+      "Bash(git rm*)",
+      "Bash(pnpm fmt*)",
+      "Bash(pnpm lint*)",
+      "Bash(pnpm textlint*)",
+      "Bash(pnpm markdownlint*)",
+      "Bash(pnpm exec oxfmt*)"
     ]
   },
   "hooks": {
