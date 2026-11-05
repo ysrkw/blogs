@@ -68,7 +68,7 @@ critical-thinking-with-coding-agents で見出し「論理的思考は線路を�
 
 ## 機械校正（textlint）の運用知見（2026-06-22 導入）
 
-運用原則は CLAUDE.md「AI の執筆姿勢」、効かせる経路と設定は docs/markdown.md を参照。ここでは導入時に得た固有の学びだけ残す。
+運用原則は docs/writing-policy.md「AI の執筆姿勢」、効かせる経路と設定は docs/markdown.md を参照。ここでは導入時に得た固有の学びだけ残す。
 
 - **テンプレの違反は生成物に伝播する**。blog-ideate のテンプレの `想定読了時間` が ja-technical-writing に引っかかり、過去の全 ideas に伝播していた（`読了時間の目安` に直して根を断った）。テンプレは各 SKILL.md 末尾のコードブロックに同梱されており textlint の自動対象外なので、新ルール導入時は手動で（または最初の生成物で）通す
 - **lefthook の glob はトップ直下の flat ファイルを拾わない**。`{ideas,drafts,articles}/**/*.md` という設定は `ideas/{slug}.md`（ネストなし）を取りこぼす。末尾を `/**.md`（gobwas のスーパースター）に変えると flat と nested を両方カバーする（実測確認済み）

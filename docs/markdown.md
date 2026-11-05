@@ -19,10 +19,10 @@ Markdown の書き方の規約（人間向け）と、自動チェック（textl
 
 - `pnpm textlint` / `pnpm textlint:fix`: 手動実行
 - pre-commit hook（lefthook）: ステージした `*.md` を検査
-- AI 編集 hook（PostToolUse）: Claude Code または Codex がファイルを編集すると `pnpm textlint` が走る。各設定は `.claude/settings.json` と `.codex/hooks.json`
+- AI 編集 hook（PostToolUse）: Claude Code がファイルを編集すると `pnpm textlint` が走る。設定は `.claude/settings.json`
 - `/blog-writing`: 通し読みモードの準備で `pnpm textlint` をかけ、指摘キューの材料にする
 
-humanizer 同様、**丸ごと `--fix` を当てて書き換えない**。意味や語調を変えない機械的な指摘はAIが先に反映してまとめて報告する。語彙やリズムなどに触れる指摘は1つずつ本人判断で反映し、文体・語りを守るため当てない指摘も選んでよい。運用原則の全体は CLAUDE.md「AI の執筆姿勢」を参照。
+humanizer 同様、**丸ごと `--fix` を当てて書き換えない**。意味や語調を変えない機械的な指摘はAIが先に反映してまとめて報告する。語彙やリズムなどに触れる指摘は1つずつ本人判断で反映し、文体・語りを守るため当てない指摘も選んでよい。運用原則の全体は docs/writing-policy.md「AI の執筆姿勢」を参照。
 
 ### markdownlint（構文チェック）
 
@@ -32,7 +32,7 @@ Markdown の構文（見出し周りの空行・リストの体裁・末尾空�
 
 - `pnpm markdownlint`: 手動実行。機械的な修正は `pnpm markdownlint:fix`
 - pre-commit hook（lefthook）: ステージした `*.md` を検査
-- AI 編集 hook（PostToolUse）: Claude Code または Codex がファイルを編集すると `pnpm markdownlint` が走る。各設定は `.claude/settings.json` と `.codex/hooks.json`
+- AI 編集 hook（PostToolUse）: Claude Code がファイルを編集すると `pnpm markdownlint` が走る。設定は `.claude/settings.json`
 
 主なルール調整（理由は設定ファイルのコメントを参照）。
 
@@ -43,4 +43,4 @@ Markdown の構文（見出し周りの空行・リストの体裁・末尾空�
 
 markdownlint の指摘は機械的な構文が中心だが、textlint と揃えて AI 編集 hook では丸ごと `--fix` せず差し戻す。機械的にまとめて直したいときは `pnpm markdownlint:fix` を手動で走らせる。
 
-textlint と markdownlint は、Claude Code・Codexの各設定から pnpm script を直接実行する。編集ファイルだけでなく、リポジトリ内の全Markdownを検査する。振り返りのhookスクリプトは、製品ごとの入出力仕様に合わせて `.claude/hooks/` と `.codex/hooks/` に分ける。Codex のプロジェクト用 hooks は信頼済みリポジトリで読み込まれる。初回または定義の変更後は `/hooks` で内容を確認して信頼する。
+textlint と markdownlint は、Claude Code の設定から pnpm script を直接実行する。編集ファイルだけでなく、リポジトリ内の全Markdownを検査する。振り返りのhookスクリプトは `.claude/hooks/` に置く。
